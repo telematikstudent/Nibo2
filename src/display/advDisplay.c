@@ -16,8 +16,9 @@
 
 #include "advDisplay.h"
 
-
-
+/**
+ * @brief prints the current Voltage on the display
+ */
 void advDisplay_printVoltage(){
 		char output[20] = "";
 		double volt = 0;
