@@ -10,8 +10,8 @@ src/Application.d src/Application.o: ../src/Application.c \
   /home/defaultuser/nibolib/include/nibo/sound.h \
   /home/defaultuser/nibolib/include/nibo/delay.h \
   /home/defaultuser/nibolib/include/nibo/leds.h \
-  /home/defaultuser/nibolib/include/nibo/uart0.h \
   /home/defaultuser/nibolib/include/nibo/i2cmaster.h \
+  /home/defaultuser/nibolib/include/nibo/xbee.h \
   ../src/display/advDisplay.h \
   /home/defaultuser/nibolib/include/nibo/display.h \
   /home/defaultuser/nibolib/include/nibo/gfx.h ../src/display/logo.xbm
@@ -38,9 +38,9 @@ src/Application.d src/Application.o: ../src/Application.c \
 
 /home/defaultuser/nibolib/include/nibo/leds.h:
 
-/home/defaultuser/nibolib/include/nibo/uart0.h:
-
 /home/defaultuser/nibolib/include/nibo/i2cmaster.h:
+
+/home/defaultuser/nibolib/include/nibo/xbee.h:
 
 ../src/display/advDisplay.h:
 

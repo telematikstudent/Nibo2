@@ -39,8 +39,8 @@
 #include <nibo/sound.h>
 #include <nibo/delay.h>
 #include <nibo/leds.h>
-#include <nibo/uart0.h>
 #include <nibo/i2cmaster.h>
+#include <nibo/xbee.h>
 
 
 

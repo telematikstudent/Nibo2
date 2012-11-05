@@ -65,14 +65,14 @@ void checkDistance(){
 	}
 	else leds_set_status(LEDS_GREEN,2);
 
-	if(obstacle) copro_stop();
-	else copro_setSpeed(14,14);
+
+//	if(obstacle) copro_stop();
+//	else copro_setSpeed(14,14);
 
 }
 
 void initNibo(){
 	bot_init();
-
 
 	sei();
 	spi_init();
@@ -100,6 +100,7 @@ void initNibo(){
 
 	//leds_set_status_intensity(128);
 
+	advDisplay_append_line("Initialisiert!");
 }
 
 
@@ -111,34 +112,46 @@ int main(void){
 
 	initNibo();
 
-	int i = 0;
-	char output[14] = "";
-
-	uint8_t c = 'a';
-	int char_count = 0;
+//	int i = 0;
+//	char output[14] = "";
+//
+//	uint8_t c = 'a';
+//	int char_count = 0;
 
 	while(1){
-		c = niboCom_getchar();
-		if( (char)c != 0){
+//		c = niboCom_getchar();
+//		if( (char)c != 0){
+//
+//
+//			if((char)c == '\r' || char_count >= 13){
+//				niboCom_putchar('\n');
+//				niboCom_putchar('\r');
+//				output[char_count] = '\0';
+//				strcpy(output, output);
+//				advDisplay_append_line(output);
+//				char_count = 0;
+//			}
+//			else{
+//				niboCom_putchar((char)c);
+//				output[char_count++] = (char)c;
+//			}
+//
+//		}
+
+		//niboCom_putIRDistance(copro_distance);
 
 
-			if((char)c == '\r' || char_count >= 13){
-				niboCom_putchar('\n');
-				niboCom_putchar('\r');
-				output[char_count] = '\0';
-				strcpy(output, output);
-				advDisplay_append_line(output);
-				char_count = 0;
-			}
-			else{
-				niboCom_putchar((char)c);
-				output[char_count++] = (char)c;
-			}
-
-		}
-		delay(100);
+		delay(1000);
 		advDisplay_printVoltage();
 
 	}
 	return 0;
 }
+
+
+
+
+
+
+
+
