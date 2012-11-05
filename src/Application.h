@@ -1,8 +1,10 @@
-/*
- * Application.h
- *
- *  Created on: 22.10.2012
- *      Author: defaultuser
+/**
+ ============================================================================
+ @file       : Application.c
+ @author     : Phillip Kopprasch
+ @date	     : Version 1.0
+ @brief		 : Main .c-File for Martini-Nibo-Projekt
+ ============================================================================
  */
 
 #ifndef APPLICATION_H_
@@ -10,10 +12,19 @@
 
 
 /**
- * Defines
+ * defines
  */
 #define timer_limit 256
 #define ir_sensor_limit 70
+
+/**
+ * includes std
+ */
+#include <stdbool.h>
+
+/**
+ * includes avr
+ */
 
 /**
  * includes nibo
@@ -28,19 +39,23 @@
 #include <nibo/sound.h>
 #include <nibo/delay.h>
 #include <nibo/leds.h>
+#include <nibo/uart0.h>
+#include <nibo/i2cmaster.h>
+
+
 
 
 /**
- * includes avr
- */
-
-
-/**
- * includes other
+ * includes Martini
  */
 
 #include "display/advDisplay.h"
 
+void checkDistance();
+
+void initNibo();
+
+int main(void);
 
 
 #endif /* APPLICATION_H_ */
