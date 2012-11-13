@@ -38,6 +38,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <avr/interrupt.h>
 
 #include "nibo/uart0.h"
+#include "niboCom.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -134,6 +135,7 @@ ISR(USART0_RX_vect) {
   if (!uart0_rxfull()) {
     uart0_rx_putchar(c);
   }
+  niboCom_uartInterrupt();
 }
 
 

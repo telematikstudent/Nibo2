@@ -13,7 +13,23 @@
 
 #include "niboCom.h"
 
-bool niboCom_auto = false;
+#define niboCom_bufferSize 10
+
+
+//status vars
+bool autoMode = false;
+bool startSign = false;
+
+uint8_t lastCMD = niboCom_cmd_none;
+
+
+
+uint8_t buffer[niboCom_bufferSize];
+uint8_t bufferPos = 0;
+
+
+
+
 
 void niboCom_init(){
 	niboCom_init_with_baud(niboCom_default_baudrate);
@@ -76,15 +92,44 @@ void niboCom_putdircetionChange(uint8_t direction){
 
 
 void niboCom_putDistance(uint8_t ticks){
-	niboCom_putPackage(niboCom_cmd_nibo_distance,1,ticks);
+	niboCom_putPackage(niboCom_cmd_nibo_distance,1,&ticks);
 }
 
 
 uint8_t niboCom_getCMD(){
-	if(niboCom_auto == true) return niboCom_cmd_nibo_auto;
+	uint8_t tmp = lastCMD;
+	if(tmp != niboCom_cmd_none){
+		lastCMD = niboCom_cmd_none;
+		return tmp;
+	}
+	if(autoMode == true) return niboCom_cmd_nibo_auto;
 	else return niboCom_cmd_nibo_man;
 }
 
 void niboCom_setAuto(bool mode){
-	niboCom_auto = mode;
+	autoMode = mode;
+}
+
+
+void niboCom_uartInterrupt(){
+	while(uart0_rxempty() == true);
+	uint8_t c = niboCom_getchar();
+
+	if(c == 0x68){
+		startSign = true;
+	}
+	else if(startSign != true){
+		return;
+	}
+
+	buffer[bufferPos++] = c;
+
+	if(bufferPos == 4){
+		bufferPos = 0;
+		startSign = false;
+		if(c == 0x16){
+			lastCMD = buffer[1];
+		}
+	}
+
 }

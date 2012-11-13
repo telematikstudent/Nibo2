@@ -15,6 +15,7 @@
 #include <nibo/niboconfig.h>
 #include "uart0.h"
 #include <stdbool.h>
+#include <avr/interrupt.h>
 
 
 /**
@@ -27,7 +28,7 @@
 /**
  * comands
  */
-#define niboCom_cmd_reserved 		0
+#define niboCom_cmd_none	 		0
 #define niboCom_cmd_ir_distance 	1
 #define niboCom_cmd_nds_distance 	2
 #define niboCom_cmd_nibo_distance	3
@@ -45,9 +46,9 @@
 #define niboCom_cmd_nibo_turn		17
 
 
+void niboCom_uartInterrupt();
 
 void niboCom_init();
-
 
 void niboCom_init_with_baud(uint16_t baudrate);
 
@@ -57,12 +58,9 @@ void niboCom_putIRDistance(uint16_t *data);
 
 void niboCom_putNDSDistance(int size, uint8_t *data);
 
-
 void niboCom_putdircetionChange(uint8_t direction);
 
-
 void niboCom_putDistance(uint8_t ticks);
-
 
 uint8_t niboCom_getCMD();
 
