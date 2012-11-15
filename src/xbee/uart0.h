@@ -46,8 +46,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C" {
 #endif
 
-#define UART0_TXBUF_SIZE 8
-#define UART0_RXBUF_SIZE 8
+#define UART0_TXBUF_SIZE 200
+#define UART0_RXBUF_SIZE 50
 
 /*!
  * Setzt neue Baudrate

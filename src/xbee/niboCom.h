@@ -29,21 +29,22 @@
  * comands
  */
 #define niboCom_cmd_none	 		0
-#define niboCom_cmd_ir_distance 	1
-#define niboCom_cmd_nds_distance 	2
-#define niboCom_cmd_nibo_distance	3
 
 //mode
-#define niboCom_cmd_nibo_auto		10
-#define niboCom_cmd_nibo_man		11
+#define niboCom_cmd_nibo_auto		1
+#define niboCom_cmd_nibo_man		2
 
-#define niboCom_cmd_nibo_drive		12
+#define niboCom_cmd_ir_distance 	3
+#define niboCom_cmd_nds_distance 	4
+#define niboCom_cmd_nibo_distance	5
+#define niboCom_cmd_nibo_drive		6
 //directions
-#define niboCom_cmd_nibo_halfLeft	13
-#define niboCom_cmd_nibo_left		14
-#define niboCom_cmd_nibo_halfRight	15
-#define niboCom_cmd_nibo_right		16
-#define niboCom_cmd_nibo_turn		17
+#define niboCom_cmd_nibo_turn		10
+#define niboCom_cmd_nibo_halfLeft	11
+#define niboCom_cmd_nibo_left		12
+#define niboCom_cmd_nibo_halfRight	13
+#define niboCom_cmd_nibo_right		14
+
 
 
 void niboCom_uartInterrupt();
@@ -58,7 +59,7 @@ void niboCom_putIRDistance(uint16_t *data);
 
 void niboCom_putNDSDistance(int size, uint8_t *data);
 
-void niboCom_putdircetionChange(uint8_t direction);
+void niboCom_putDircetionChange(uint8_t direction);
 
 void niboCom_putDistance(uint8_t ticks);
 

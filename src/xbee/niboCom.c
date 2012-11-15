@@ -22,8 +22,7 @@ bool startSign = false;
 
 uint8_t lastCMD = niboCom_cmd_none;
 
-
-
+//rx buffer
 uint8_t buffer[niboCom_bufferSize];
 uint8_t bufferPos = 0;
 
@@ -76,17 +75,11 @@ void niboCom_putIRDistance(uint16_t *data){
 }
 
 void niboCom_putNDSDistance(int size, uint8_t *data){
-	int i = 0;
-	uint8_t distance[size];
-	for(i = 0; i < size;i++){
-		distance[i] = data[i]/256;
-	}
-
-	niboCom_putPackage(niboCom_cmd_nds_distance,size, distance);
+	niboCom_putPackage(niboCom_cmd_nds_distance,size, data);
 }
 
 
-void niboCom_putdircetionChange(uint8_t direction){
+void niboCom_putDircetionChange(uint8_t direction){
 	niboCom_putPackage(direction,0,0);
 }
 
@@ -97,13 +90,16 @@ void niboCom_putDistance(uint8_t ticks){
 
 
 uint8_t niboCom_getCMD(){
+
+	if(autoMode == true) return niboCom_cmd_nibo_auto;
+
 	uint8_t tmp = lastCMD;
 	if(tmp != niboCom_cmd_none){
 		lastCMD = niboCom_cmd_none;
 		return tmp;
 	}
-	if(autoMode == true) return niboCom_cmd_nibo_auto;
-	else return niboCom_cmd_nibo_man;
+
+	return niboCom_cmd_nibo_man;
 }
 
 void niboCom_setAuto(bool mode){
@@ -128,7 +124,17 @@ void niboCom_uartInterrupt(){
 		bufferPos = 0;
 		startSign = false;
 		if(c == 0x16){
-			lastCMD = buffer[1];
+
+			if(buffer[1] == niboCom_cmd_nibo_auto){
+				autoMode = true;
+			}
+			else if(buffer[1] == niboCom_cmd_nibo_man){
+				autoMode = false;
+			}
+			else{
+				lastCMD = buffer[1];
+			}
+
 		}
 	}
 
