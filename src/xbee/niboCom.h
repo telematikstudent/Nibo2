@@ -57,7 +57,7 @@ void niboCom_putPackage(uint8_t cmd, uint8_t size, uint8_t *data);
 
 void niboCom_putIRDistance(uint16_t *data);
 
-void niboCom_putNDSDistance(int size, uint8_t *data);
+void niboCom_putNDSDistance(uint8_t size, uint8_t *data);
 
 void niboCom_putDircetionChange(uint8_t direction);
 

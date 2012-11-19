@@ -44,6 +44,7 @@ void niboCom_init_with_baud(uint16_t baudrate){
 void niboCom_putchar(uint8_t c){
 	while(uart0_txfull() == true);
 	uart0_putchar(c);
+	delay(2);
 }
 
 uint8_t niboCom_getchar(){
@@ -74,7 +75,7 @@ void niboCom_putIRDistance(uint16_t *data){
 	niboCom_putPackage(niboCom_cmd_ir_distance,5, distance);
 }
 
-void niboCom_putNDSDistance(int size, uint8_t *data){
+void niboCom_putNDSDistance(uint8_t size, uint8_t *data){
 	niboCom_putPackage(niboCom_cmd_nds_distance,size, data);
 }
 
