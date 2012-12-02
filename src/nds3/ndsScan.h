@@ -1,28 +1,36 @@
-/*
- * scout.h
- *
- *  Created on: 05.11.2012
- *      Author: Abjo
+/**
+ * @file		ndsScan.h
+ * @author		Christian Witte
+ * @date		Version 0.1
+ * @brief		Headerfile: library for the NDS3 Module.
  */
 
-#ifndef SCOUT_H_
-#define SCOUT_H_
+#ifndef NDSSCAN_H_
+#define NDSSCAN_H_
 
-// Standard Includes fuer das Funktionieren des Nibo2
+/**
+ * includes
+ */
 #include <nibo/niboconfig.h>
 #include <nibo/iodefs.h>
 #include <nibo/bot.h>
-// Coprozessorfunktionen einbinden, da dieser die Motoren steuert
 #include <nibo/copro.h>
-// Kommunikationsfunktionen fuer die SPI Schnittstelle zum Coprozessor
 #include <nibo/spi.h>
-// NDS3 library
 #include <nibo/nds3.h>
-#include <stdbool.h>
-// I2C interface function
 #include <nibo/i2cmaster.h>
+#include <stdbool.h>
 
-uint8_t *ndsScan(uint8_t degrees);
+
+/**
+ * @brief scans the surrounding of the nibo with the nds3
+ * @param degree the angle resolution of the nds3 scan, defines the number of values returned -> (180/degree)+1
+ * @return the nds measurement
+ */
+uint8_t *ndsScan(uint8_t degree);
+
+/**
+ * @brief initialize nds3 module
+ */
 void ndsScan_init();
 
-#endif /* SCOUT_H_ */
+#endif /* NDSSCAN_H_ */

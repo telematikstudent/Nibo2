@@ -159,6 +159,7 @@ gfx_term_col        0x1               /home/defaultuser/nibolib/lib/libnibo2.a(g
 copro_seq           0x1               /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
 copro_speed_l       0x2               /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
 nds3_distcalib_d0   0x2               /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+nds_scan            0x2               ./src/main.o
 nds3_servocalib_hi  0x2               /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
 
 Memory Configuration
@@ -282,7 +283,7 @@ LOAD /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x38c0
+.text           0x00000000     0x3958
  *(.vectors)
  .vectors       0x00000000       0x8c /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/crtm128.o
                 0x00000000                __vectors
@@ -374,461 +375,460 @@ LOAD /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a
                 0x0000037a                __vector_26
                 0x0000037a                __vector_16
                 0x0000037a                __vector_20
- .text          0x0000037e      0x184 ./src/xbee/niboCom.o
+ .text          0x0000037e      0x17e ./src/xbee/niboCom.o
                 0x0000037e                niboCom_getCMD
                 0x0000038c                niboCom_getchar
                 0x000003a2                niboCom_uartInterrupt
                 0x000003fa                niboCom_putchar
-                0x00000416                niboCom_putPackage
+                0x00000416                niboCom_putPacket
                 0x0000046a                niboCom_putDistance
                 0x0000048c                niboCom_putDircetionChange
                 0x00000498                niboCom_putNDSDistance
                 0x000004a6                niboCom_putIRDistance
-                0x000004ee                niboCom_init_with_baud
-                0x000004f8                niboCom_init
- .text          0x00000502      0x184 ./src/xbee/uart0.o
-                0x00000502                uart0_set_baudrate
-                0x0000052e                uart0_getchar
-                0x00000560                uart0_putchar
-                0x0000059a                uart0_enable
-                0x000005a0                uart0_disable
-                0x000005a4                __vector_19
-                0x00000602                __vector_18
- .text          0x00000686       0x88 ./src/sound/n2sound.o
-                0x00000686                tone
- .text          0x0000070e       0x64 ./src/nds3/ndsScan.o
-                0x0000070e                ndsScan_init
-                0x0000071c                ndsScan
- .text          0x00000772      0x362 ./src/main.o
-                0x00000772                checkDistance
-                0x0000080a                autoMode
-                0x00000866                initBot
-                0x00000928                main
-                0x00000a1a                __vector_10
- .text          0x00000ad4      0x244 ./src/drive/drive.o
-                0x00000ad4                drive_isFrontFree
-                0x00000b0e                drive_isRightFree
-                0x00000b32                drive_isLeftFree
-                0x00000b56                drive_getFreePath
-                0x00000bc8                drive_sendIRDistance
-                0x00000be6                drive_sendTicks
-                0x00000c0a                drive_turn_around
-                0x00000c2a                drive_turn_halfRight
-                0x00000c4a                drive_turn_right
-                0x00000c6a                drive_turn_halfLeft
-                0x00000c8a                drive_turn_left
-                0x00000caa                drive
- .text          0x00000d18      0x250 ./src/display/advDisplay.o
-                0x00000d18                advDisplay_printTerminal
-                0x00000db4                advDisplay_append_line
-                0x00000e22                advDisplay_clear
-                0x00000e74                advDisplay_init
-                0x00000e92                advDisplay_printVoltage
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(delay.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
- .text          0x00000f68        0x0 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodqi4.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodhi4.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodsi4.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodsi4.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_clear_bss.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodhi4.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
- .text          0x00000f68        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
-                0x00000f68                . = ALIGN (0x2)
+                0x000004ee                niboCom_init
+ .text          0x000004fc      0x184 ./src/xbee/uart0.o
+                0x000004fc                uart0_set_baudrate
+                0x00000528                uart0_getchar
+                0x0000055a                uart0_putchar
+                0x00000594                uart0_enable
+                0x0000059a                uart0_disable
+                0x0000059e                __vector_19
+                0x000005fc                __vector_18
+ .text          0x00000680       0x88 ./src/sound/n2sound.o
+                0x00000680                tone
+ .text          0x00000708       0x64 ./src/nds3/ndsScan.o
+                0x00000708                ndsScan_init
+                0x00000716                ndsScan
+ .text          0x0000076c      0x400 ./src/main.o
+                0x0000076c                checkDistance
+                0x00000804                autoMode
+                0x000008ba                initBot
+                0x00000980                main
+                0x00000ab2                __vector_10
+ .text          0x00000b6c      0x244 ./src/drive/drive.o
+                0x00000b6c                drive_isFrontFree
+                0x00000ba6                drive_isRightFree
+                0x00000bca                drive_isLeftFree
+                0x00000bee                drive_getFreePath
+                0x00000c60                drive_sendIRDistance
+                0x00000c7e                drive_sendTicks
+                0x00000ca2                drive_turn_around
+                0x00000cc2                drive_turn_halfRight
+                0x00000ce2                drive_turn_right
+                0x00000d02                drive_turn_halfLeft
+                0x00000d22                drive_turn_left
+                0x00000d42                drive
+ .text          0x00000db0      0x250 ./src/display/advDisplay.o
+                0x00000db0                advDisplay_printTerminal
+                0x00000e4c                advDisplay_append_line
+                0x00000eba                advDisplay_clear
+                0x00000f0c                advDisplay_init
+                0x00000f2a                advDisplay_printVoltage
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(delay.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+ .text          0x00001000        0x0 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodqi4.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodhi4.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodsi4.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodsi4.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_clear_bss.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodhi4.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
+ .text          0x00001000        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
+                0x00001000                . = ALIGN (0x2)
  *(.text.*)
  .text.display_write
-                0x00000f68       0x86 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
-                0x00000f68                display_write
+                0x00001000       0x86 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
+                0x00001000                display_write
  .text.display_read
-                0x00000fee       0x82 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
-                0x00000fee                display_read
+                0x00001086       0x82 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
+                0x00001086                display_read
  .text.display_wait
-                0x00001070       0x34 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
-                0x00001070                display_wait
+                0x00001108       0x34 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
+                0x00001108                display_wait
  .text.display_init
-                0x000010a4       0xbc /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
-                0x000010a4                display_init
- .text.delay    0x00001160       0x14 /home/defaultuser/nibolib/lib/libnibo2.a(delay.o)
-                0x00001160                delay
+                0x0000113c       0xbc /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
+                0x0000113c                display_init
+ .text.delay    0x000011f8       0x14 /home/defaultuser/nibolib/lib/libnibo2.a(delay.o)
+                0x000011f8                delay
  .text.spi_restart_transmission
-                0x00001174       0x3a /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
-                0x00001174                spi_restart_transmission
+                0x0000120c       0x3a /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
+                0x0000120c                spi_restart_transmission
  .text.spi_init
-                0x000011ae       0x10 /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
-                0x000011ae                spi_init
+                0x00001246       0x10 /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
+                0x00001246                spi_init
  .text.__vector_17
-                0x000011be      0x12e /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
-                0x000011be                __vector_17
+                0x00001256      0x12e /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
+                0x00001256                __vector_17
  .text.gfx_get_x
-                0x000012ec        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x000012ec                gfx_get_x
+                0x00001384        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001384                gfx_get_x
  .text.gfx_get_y
-                0x000012f2        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x000012f2                gfx_get_y
+                0x0000138a        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x0000138a                gfx_get_y
  .text.gfx_draw_mode
-                0x000012f8        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x000012f8                gfx_draw_mode
+                0x00001390        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001390                gfx_draw_mode
  .text.gfx_char_width
-                0x000012fe       0x40 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x000012fe                gfx_char_width
+                0x00001396       0x40 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001396                gfx_char_width
  .text.gfx_text_width
-                0x0000133e       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x0000133e                gfx_text_width
+                0x000013d6       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x000013d6                gfx_text_width
  .text.gfx_text_width_P
-                0x00001364       0x2e /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001364                gfx_text_width_P
+                0x000013fc       0x2e /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x000013fc                gfx_text_width_P
  .text.gfx_set_proportional
-                0x00001392        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001392                gfx_set_proportional
+                0x0000142a        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x0000142a                gfx_set_proportional
  .text.gfx_get_proportional
-                0x00001398        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001398                gfx_get_proportional
+                0x00001430        0x6 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001430                gfx_get_proportional
  .text.gfx_term_goto
-                0x0000139e       0x12 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x0000139e                gfx_term_goto
+                0x00001436       0x12 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001436                gfx_term_goto
  .text.gfx_store_disp_tile
-                0x000013b0       0xae /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001448       0xae /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
  .text.gfx_fill
-                0x0000145e       0x74 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x0000145e                gfx_fill
+                0x000014f6       0x74 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x000014f6                gfx_fill
  .text.gfx_term_clear
-                0x000014d2       0x10 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x000014d2                gfx_term_clear
+                0x0000156a       0x10 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x0000156a                gfx_term_clear
  .text.gfx_init
-                0x000014e2       0x7e /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x000014e2                gfx_init
+                0x0000157a       0x7e /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x0000157a                gfx_init
  .text.gfx_move
-                0x00001560       0x6a /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001560                gfx_move
+                0x000015f8       0x6a /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x000015f8                gfx_move
  .text.gfx_term_scroll
-                0x000015ca       0xe4 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x000015ca                gfx_term_scroll
+                0x00001662       0xe4 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001662                gfx_term_scroll
  .text.gfx_display_write2
-                0x000016ae       0x90 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x000016ae                gfx_display_write2
+                0x00001746       0x90 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001746                gfx_display_write2
  .text.gfx_pixel
-                0x0000173e       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x0000173e                gfx_pixel
+                0x000017d6       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x000017d6                gfx_pixel
  .text.gfx_draw_xbm_P
-                0x00001764      0x1a4 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001764                gfx_draw_xbm_P
+                0x000017fc      0x1a4 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x000017fc                gfx_draw_xbm_P
  .text.gfx_draw_xbm
-                0x00001908      0x1a4 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001908                gfx_draw_xbm
- .text.gfx_box  0x00001aac       0x9a /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001aac                gfx_box
+                0x000019a0      0x1a4 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x000019a0                gfx_draw_xbm
+ .text.gfx_box  0x00001b44       0x9a /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001b44                gfx_box
  .text.gfx_vline
-                0x00001b46        0xa /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001b46                gfx_vline
+                0x00001bde        0xa /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001bde                gfx_vline
  .text.gfx_hline
-                0x00001b50       0x30 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001b50                gfx_hline
+                0x00001be8       0x30 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001be8                gfx_hline
  .text.gfx_lineTo
-                0x00001b80      0x112 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001b80                gfx_lineTo
+                0x00001c18      0x112 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001c18                gfx_lineTo
  .text.gfx_print_char_base
-                0x00001c92       0xe0 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001c92                gfx_print_char_base
+                0x00001d2a       0xe0 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001d2a                gfx_print_char_base
  .text.gfx_print_char
-                0x00001d72       0x48 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001d72                gfx_print_char
+                0x00001e0a       0x48 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001e0a                gfx_print_char
  .text.gfx_term_print
-                0x00001dba       0x88 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001dba                gfx_term_print
+                0x00001e52       0x88 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001e52                gfx_term_print
  .text.gfx_print_text_P
-                0x00001e42       0x22 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001e42                gfx_print_text_P
+                0x00001eda       0x22 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001eda                gfx_print_text_P
  .text.gfx_print_text
-                0x00001e64       0x1a /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00001e64                gfx_print_text
+                0x00001efc       0x1a /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00001efc                gfx_print_text
  .text._copro_check_busy
-                0x00001e7e       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00001e7e                _copro_check_busy
+                0x00001f16       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00001f16                _copro_check_busy
  .text.copro_update
-                0x00001ea4      0x138 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00001ea4                copro_update
+                0x00001f3c      0x138 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00001f3c                copro_update
  .text.copro_stop
-                0x00001fdc        0xc /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00001fdc                copro_stop
+                0x00002074        0xc /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00002074                copro_stop
  .text.copro_stopImmediate
-                0x00001fe8        0xe /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00001fe8                copro_stopImmediate
+                0x00002080        0xe /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00002080                copro_stopImmediate
  .text.copro_setPWM
-                0x00001ff6       0x1e /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00001ff6                copro_setPWM
+                0x0000208e       0x1e /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x0000208e                copro_setPWM
  .text.copro_setSpeed
-                0x00002014       0x1e /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00002014                copro_setSpeed
+                0x000020ac       0x1e /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x000020ac                copro_setSpeed
  .text.copro_setTargetAbs
-                0x00002032       0x42 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00002032                copro_setTargetAbs
+                0x000020ca       0x42 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x000020ca                copro_setTargetAbs
  .text.copro_setTargetRel
-                0x00002074       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00002074                copro_setTargetRel
+                0x0000210c       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x0000210c                copro_setTargetRel
  .text.copro_setSpeedParameters
-                0x0000209a       0x2e /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x0000209a                copro_setSpeedParameters
+                0x00002132       0x2e /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00002132                copro_setSpeedParameters
  .text.copro_setPositionParameters
-                0x000020c8        0x4 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x000020c8                copro_setPositionParameters
+                0x00002160        0x4 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00002160                copro_setPositionParameters
  .text.copro_resetOdometry
-                0x000020cc       0x54 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x000020cc                copro_resetOdometry
+                0x00002164       0x54 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00002164                copro_resetOdometry
  .text.copro_ir_stop
-                0x00002120       0x20 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00002120                copro_ir_stop
+                0x000021b8       0x20 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x000021b8                copro_ir_stop
  .text.copro_ir_startMeasure
-                0x00002140       0x20 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00002140                copro_ir_startMeasure
+                0x000021d8       0x20 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x000021d8                copro_ir_startMeasure
  .text.copro_transmitRC5
-                0x00002160       0x2a /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x00002160                copro_transmitRC5
+                0x000021f8       0x2a /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x000021f8                copro_transmitRC5
  .text.spi_finished_callback
-                0x0000218a       0xac /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x0000218a                spi_finished_callback
+                0x00002222       0xac /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00002222                spi_finished_callback
  .text.bot_update
-                0x00002236       0x10 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
-                0x00002236                bot_update
+                0x000022ce       0x10 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
+                0x000022ce                bot_update
  .text.bot_init
-                0x00002246       0x18 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
-                0x00002246                bot_init
+                0x000022de       0x18 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
+                0x000022de                bot_init
  .text.leds_init
-                0x0000225e       0x10 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
-                0x0000225e                leds_init
+                0x000022f6       0x10 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+                0x000022f6                leds_init
  .text.leds_set_status
-                0x0000226e       0x66 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
-                0x0000226e                leds_set_status
+                0x00002306       0x66 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+                0x00002306                leds_set_status
  .text.leds_set_status_intensity
-                0x000022d4        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
-                0x000022d4                leds_set_status_intensity
+                0x0000236c        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+                0x0000236c                leds_set_status_intensity
  .text.leds_get_status_intensity
-                0x000022de        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
-                0x000022de                leds_get_status_intensity
+                0x00002376        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+                0x00002376                leds_get_status_intensity
  .text.leds_set_headlights
-                0x000022e8        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
-                0x000022e8                leds_set_headlights
+                0x00002380        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+                0x00002380                leds_set_headlights
  .text.leds_get_headlights
-                0x000022f2        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
-                0x000022f2                leds_get_headlights
+                0x0000238a        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+                0x0000238a                leds_get_headlights
  .text.leds_set_displaylight
-                0x000022fc        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
-                0x000022fc                leds_set_displaylight
+                0x00002394        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+                0x00002394                leds_set_displaylight
  .text.leds_get_displaylight
-                0x00002306        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
-                0x00002306                leds_get_displaylight
+                0x0000239e        0xa /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+                0x0000239e                leds_get_displaylight
  .text.sound_init
-                0x00002310        0x4 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
-                0x00002310                sound_init
+                0x000023a8        0x4 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
+                0x000023a8                sound_init
  .text.sound_tone
-                0x00002314       0x50 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
-                0x00002314                sound_tone
+                0x000023ac       0x50 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
+                0x000023ac                sound_tone
  .text.pwm_init
-                0x00002364       0x64 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
-                0x00002364                pwm_init
+                0x000023fc       0x64 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
+                0x000023fc                pwm_init
  .text.__vector_14
-                0x000023c8      0x108 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
-                0x000023c8                __vector_14
+                0x00002460      0x108 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
+                0x00002460                __vector_14
  .text.adc_init
-                0x000024d0       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
-                0x000024d0                adc_init
+                0x00002568       0x26 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
+                0x00002568                adc_init
  .text.adc_read
-                0x000024f6       0x3c /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
-                0x000024f6                adc_read
+                0x0000258e       0x3c /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
+                0x0000258e                adc_read
  .text.adc_get_random_seed
-                0x00002532        0xa /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
-                0x00002532                adc_get_random_seed
+                0x000025ca        0xa /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
+                0x000025ca                adc_get_random_seed
  .text.avr-libc.fplib
-                0x0000253c        0xa /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
-                0x0000253c                __subsf3
-                0x0000253e                __addsf3
+                0x000025d4        0xa /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
+                0x000025d4                __subsf3
+                0x000025d6                __addsf3
  .text.avr-libc.fplib
-                0x00002546       0xc0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
-                0x00002560                __addsf3x
+                0x000025de       0xc0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
+                0x000025f8                __addsf3x
  .text.avr-libc.fplib
-                0x00002606        0x8 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
-                0x00002606                __lesf2
-                0x00002606                __nesf2
-                0x00002606                __eqsf2
-                0x00002606                __cmpsf2
-                0x00002606                __ltsf2
+                0x0000269e        0x8 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
+                0x0000269e                __lesf2
+                0x0000269e                __nesf2
+                0x0000269e                __eqsf2
+                0x0000269e                __cmpsf2
+                0x0000269e                __ltsf2
  .text.avr-libc.fplib
-                0x0000260e       0x7a /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
-                0x0000260e                __floatunsisf
-                0x00002612                __floatsisf
+                0x000026a6       0x7a /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
+                0x000026a6                __floatunsisf
+                0x000026aa                __floatsisf
  .text.avr-libc.fplib
-                0x00002688       0x48 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
-                0x00002688                __fp_cmp
+                0x00002720       0x48 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
+                0x00002720                __fp_cmp
  .text.avr-libc.fplib
-                0x000026d0        0xc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
-                0x000026d0                __fp_inf
+                0x00002768        0xc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
+                0x00002768                __fp_inf
  .text.avr-libc.fplib
-                0x000026dc        0x6 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
-                0x000026dc                __fp_nan
+                0x00002774        0x6 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
+                0x00002774                __fp_nan
  .text.avr-libc.fplib
-                0x000026e2        0xe /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
-                0x000026e2                __fp_pscA
+                0x0000277a        0xe /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
+                0x0000277a                __fp_pscA
  .text.avr-libc.fplib
-                0x000026f0        0xe /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
-                0x000026f0                __fp_pscB
+                0x00002788        0xe /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
+                0x00002788                __fp_pscB
  .text.avr-libc.fplib
-                0x000026fe       0x22 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
-                0x000026fe                __fp_round
+                0x00002796       0x22 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
+                0x00002796                __fp_round
  .text.avr-libc.fplib
-                0x00002720       0x44 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
-                0x00002720                __fp_split3
-                0x00002730                __fp_splitA
+                0x000027b8       0x44 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
+                0x000027b8                __fp_split3
+                0x000027c8                __fp_splitA
  .text.avr-libc.fplib
-                0x00002764        0xe /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
-                0x00002764                __fp_zero
-                0x00002766                __fp_szero
+                0x000027fc        0xe /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
+                0x000027fc                __fp_zero
+                0x000027fe                __fp_szero
  .text.avr-libc.fplib
-                0x00002772        0x4 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
-                0x00002772                __mulsf3
+                0x0000280a        0x4 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
+                0x0000280a                __mulsf3
  .text.avr-libc.fplib
-                0x00002776       0xc2 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
-                0x0000278a                __mulsf3x
-                0x0000278e                __mulsf3_pse
+                0x0000280e       0xc2 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
+                0x00002822                __mulsf3x
+                0x00002826                __mulsf3_pse
  .text.avr-libc
-                0x00002838      0x764 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
-                0x00002838                vfprintf
+                0x000028d0      0x764 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
+                0x000028d0                vfprintf
  .text.i2c_start_transmission
-                0x00002f9c       0x4e /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
-                0x00002f9c                i2c_start_transmission
+                0x00003034       0x4e /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+                0x00003034                i2c_start_transmission
  .text.i2c_wait_transmission
-                0x00002fea       0x4c /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
-                0x00002fea                i2c_wait_transmission
+                0x00003082       0x4c /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+                0x00003082                i2c_wait_transmission
  .text.i2c_status
-                0x00003036        0x6 /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
-                0x00003036                i2c_status
+                0x000030ce        0x6 /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+                0x000030ce                i2c_status
  .text.i2c_init
-                0x0000303c       0x1e /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
-                0x0000303c                i2c_init
+                0x000030d4       0x1e /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+                0x000030d4                i2c_init
  .text.__vector_33
-                0x0000305a      0x14c /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
-                0x0000305a                __vector_33
+                0x000030f2      0x14c /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+                0x000030f2                __vector_33
  .text.nds3_init
-                0x000031a6        0x2 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x000031a6                nds3_init
+                0x0000323e        0x2 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x0000323e                nds3_init
  .text.nds3_transaction
-                0x000031a8       0x12 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x00003240       0x12 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
  .text.nds3_distcalib_commit
-                0x000031ba       0x46 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x000031ba                nds3_distcalib_commit
+                0x00003252       0x46 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x00003252                nds3_distcalib_commit
  .text.nds3_distcalib_update
-                0x00003200       0x58 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x00003200                nds3_distcalib_update
+                0x00003298       0x58 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x00003298                nds3_distcalib_update
  .text.nds3_servocalib_commit
-                0x00003258       0x46 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x00003258                nds3_servocalib_commit
+                0x000032f0       0x46 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x000032f0                nds3_servocalib_commit
  .text.nds3_servocalib_update
-                0x0000329e       0x58 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x0000329e                nds3_servocalib_update
+                0x00003336       0x58 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x00003336                nds3_servocalib_update
  .text.nds3_move_servo
-                0x000032f6       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x000032f6                nds3_move_servo
+                0x0000338e       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x0000338e                nds3_move_servo
  .text.nds3_get_analog
-                0x00003314       0x2a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x00003314                nds3_get_analog
+                0x000033ac       0x2a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x000033ac                nds3_get_analog
  .text.nds3_pin_update
-                0x0000333e       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x0000333e                nds3_pin_update
+                0x000033d6       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x000033d6                nds3_pin_update
  .text.nds3_port_commit
-                0x0000335c       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x0000335c                nds3_port_commit
+                0x000033f4       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x000033f4                nds3_port_commit
  .text.nds3_ddr_commit
-                0x0000337a       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x0000337a                nds3_ddr_commit
+                0x00003412       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x00003412                nds3_ddr_commit
  .text.nds3_get_busy
-                0x00003398       0x1a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x00003398                nds3_get_busy
+                0x00003430       0x1a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x00003430                nds3_get_busy
  .text.nds3_get_dist
-                0x000033b2       0x1a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x000033b2                nds3_get_dist
+                0x0000344a       0x1a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x0000344a                nds3_get_dist
  .text.nds3_get_pos
-                0x000033cc       0x1a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x000033cc                nds3_get_pos
+                0x00003464       0x1a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x00003464                nds3_get_pos
  .text.nds3_read
-                0x000033e6       0x4a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x000033e6                nds3_read
+                0x0000347e       0x4a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x0000347e                nds3_read
  .text.nds3_measure
-                0x00003430       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x00003430                nds3_measure
+                0x000034c8       0x1e /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x000034c8                nds3_measure
  .text.nds3_move
-                0x0000344e       0x1a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x0000344e                nds3_move
+                0x000034e6       0x1a /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x000034e6                nds3_move
  .text.nds3_reset
-                0x00003468       0x14 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x00003468                nds3_reset
- .text.libgcc   0x0000347c       0x18 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodqi4.o)
-                0x0000347c                __udivmodqi4
- .text.libgcc   0x00003494       0x26 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodhi4.o)
-                0x00003494                __divmodhi4
-                0x00003494                _div
- .text.libgcc   0x000034ba       0x44 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodsi4.o)
-                0x000034ba                __udivmodsi4
- .text.libgcc   0x000034fe       0x36 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodsi4.o)
-                0x000034fe                __divmodsi4
- .text.libgcc   0x00003534        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
- .text.libgcc   0x00003534        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_clear_bss.o)
- .text.libgcc   0x00003534       0x28 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodhi4.o)
-                0x00003534                __udivmodhi4
+                0x00003500       0x14 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x00003500                nds3_reset
+ .text.libgcc   0x00003514       0x18 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodqi4.o)
+                0x00003514                __udivmodqi4
+ .text.libgcc   0x0000352c       0x26 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodhi4.o)
+                0x0000352c                __divmodhi4
+                0x0000352c                _div
+ .text.libgcc   0x00003552       0x44 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodsi4.o)
+                0x00003552                __udivmodsi4
+ .text.libgcc   0x00003596       0x36 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodsi4.o)
+                0x00003596                __divmodsi4
+ .text.libgcc   0x000035cc        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
+ .text.libgcc   0x000035cc        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000035cc       0x28 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodhi4.o)
+                0x000035cc                __udivmodhi4
  .text.avr-libc
-                0x0000355c      0x1b0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
-                0x0000355c                __ftoa_engine
+                0x000035f4      0x1b0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
+                0x000035f4                __ftoa_engine
  .text.avr-libc
-                0x0000370c       0x16 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
-                0x0000370c                strnlen_P
+                0x000037a4       0x16 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
+                0x000037a4                strnlen_P
  .text.avr-libc
-                0x00003722        0xe /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
-                0x00003722                strcpy
+                0x000037ba        0xe /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
+                0x000037ba                strcpy
  .text.avr-libc
-                0x00003730       0x16 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
-                0x00003730                strnlen
+                0x000037c8       0x16 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
+                0x000037c8                strnlen
  .text.avr-libc
-                0x00003746       0x58 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
-                0x00003746                fputc
+                0x000037de       0x58 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
+                0x000037de                fputc
  .text.avr-libc
-                0x0000379e       0x62 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
-                0x0000379e                sprintf
+                0x00003836       0x62 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
+                0x00003836                sprintf
  .text.avr-libc
-                0x00003800       0xbc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
-                0x00003800                __ultoa_invert
-                0x000038bc                . = ALIGN (0x2)
+                0x00003898       0xbc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
+                0x00003898                __ultoa_invert
+                0x00003954                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x000038bc        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
-                0x000038bc                exit
-                0x000038bc                _exit
+ .fini9         0x00003954        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
+                0x00003954                exit
+                0x00003954                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -847,11 +847,11 @@ LOAD /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x000038bc        0x4 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
+ .fini0         0x00003954        0x4 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
  *(.fini0)
-                0x000038c0                _etext = .
+                0x00003958                _etext = .
 
-.data           0x00800100      0x37c load address 0x000038c0
+.data           0x00800100      0x37e load address 0x00003958
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/crtm128.o
@@ -859,210 +859,213 @@ LOAD /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a
  .data          0x00800100        0x0 ./src/xbee/uart0.o
  .data          0x00800100        0x0 ./src/sound/n2sound.o
  .data          0x00800100        0x0 ./src/nds3/ndsScan.o
- .data          0x00800100       0x91 ./src/main.o
- .data          0x00800191        0x0 ./src/drive/drive.o
- .data          0x00800191       0xab ./src/display/advDisplay.o
-                0x008001d8                terminal_text
- .data          0x0080023c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
- .data          0x0080023c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(delay.o)
- .data          0x0080023c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
- .data          0x0080023c      0x240 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x0080023c                fontTiles
- .data          0x0080047c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
- .data          0x0080047c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
- .data          0x0080047c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
- .data          0x0080047c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
- .data          0x0080047c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
- .data          0x0080047c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
- .data          0x0080047c        0x0 /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
- .data          0x0080047c        0x0 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodqi4.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodhi4.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodsi4.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodsi4.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_clear_bss.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodhi4.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
- .data          0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
+ .data          0x00800100       0x93 ./src/main.o
+ .data          0x00800193        0x0 ./src/drive/drive.o
+ .data          0x00800193       0xab ./src/display/advDisplay.o
+                0x008001da                terminal_text
+ .data          0x0080023e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
+ .data          0x0080023e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(delay.o)
+ .data          0x0080023e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
+ .data          0x0080023e      0x240 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x0080023e                fontTiles
+ .data          0x0080047e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+ .data          0x0080047e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
+ .data          0x0080047e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+ .data          0x0080047e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
+ .data          0x0080047e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
+ .data          0x0080047e        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
+ .data          0x0080047e        0x0 /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+ .data          0x0080047e        0x0 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodqi4.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodhi4.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodsi4.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodsi4.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_clear_bss.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodhi4.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
+ .data          0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
  *(.data*)
  *(.rodata)
  *(.rodata*)
  *(.gnu.linkonce.d*)
-                0x0080047c                . = ALIGN (0x2)
-                0x0080047c                _edata = .
-                0x0080047c                PROVIDE (__data_end, .)
+                0x0080047e                . = ALIGN (0x2)
+                0x0080047e                _edata = .
+                0x0080047e                PROVIDE (__data_end, .)
 
-.bss            0x0080047c      0x35f
-                0x0080047c                PROVIDE (__bss_start, .)
+.bss            0x0080047e      0x362
+                0x0080047e                PROVIDE (__bss_start, .)
  *(.bss)
- .bss           0x0080047c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/crtm128.o
- .bss           0x0080047c        0x3 ./src/xbee/niboCom.o
-                0x0080047c                startSign
-                0x0080047d                lastCMD
-                0x0080047e                bufferPos
- .bss           0x0080047f        0x0 ./src/xbee/uart0.o
- .bss           0x0080047f        0x0 ./src/sound/n2sound.o
- .bss           0x0080047f       0xb4 ./src/nds3/ndsScan.o
- .bss           0x00800533        0x2 ./src/main.o
-                0x00800533                voltageCheck
- .bss           0x00800535        0x0 ./src/drive/drive.o
- .bss           0x00800535        0x4 ./src/display/advDisplay.o
-                0x00800535                terminal_head
-                0x00800537                terminal_count
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(delay.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
- .bss           0x00800539        0x0 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodqi4.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodhi4.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodsi4.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodsi4.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_clear_bss.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodhi4.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
- .bss           0x00800539        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
+ .bss           0x0080047e        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/crtm128.o
+ .bss           0x0080047e        0x3 ./src/xbee/niboCom.o
+                0x0080047e                startSignReceived
+                0x0080047f                lastCMD
+                0x00800480                bufferPos
+ .bss           0x00800481        0x0 ./src/xbee/uart0.o
+ .bss           0x00800481        0x0 ./src/sound/n2sound.o
+ .bss           0x00800481       0xb4 ./src/nds3/ndsScan.o
+ .bss           0x00800535        0x3 ./src/main.o
+                0x00800535                voltageCheck
+                0x00800537                mode
+ .bss           0x00800538        0x0 ./src/drive/drive.o
+ .bss           0x00800538        0x4 ./src/display/advDisplay.o
+                0x00800538                terminal_head
+                0x0080053a                terminal_count
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(delay.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(leds.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(sound.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+ .bss           0x0080053c        0x0 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodqi4.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodhi4.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodsi4.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_divmodsi4.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_exit.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_clear_bss.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a(_udivmodhi4.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
+ .bss           0x0080053c        0x0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
  *(.bss*)
  *(COMMON)
- COMMON         0x00800539        0xa ./src/xbee/niboCom.o
-                0x00800539                buffer
- COMMON         0x00800543       0xfe ./src/xbee/uart0.o
-                0x00800543                uart0_txbuf_begin
-                0x00800544                uart0_rxbuf
-                0x00800576                uart0_txbuf
-                0x0080063e                uart0_rxbuf_begin
-                0x0080063f                uart0_rxbuf_end
-                0x00800640                uart0_txbuf_end
- COMMON         0x00800641        0x1 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
-                0x00800641                display_type
- COMMON         0x00800642       0x3e /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
-                0x00800642                spi_tx_buf
-                0x0080065d                spi_rx_size
-                0x0080065e                spi_err_cnt
-                0x0080065f                spi_tx_size
-                0x00800660                spi_frame_cnt
-                0x00800661                spi_size
-                0x00800662                spi_rx_buf
-                0x0080067d                spi_tx_chk
-                0x0080067e                spi_pos
-                0x0080067f                spi_rx_chk
- COMMON         0x00800680        0xe /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
-                0x00800680                gfx_dm
-                0x00800681                gfx_term_row
-                0x00800682                gfx_proportional
-                0x00800683                gfx_x
-                0x00800684                gfx_tile
-                0x0080068c                gfx_y
-                0x0080068d                gfx_term_col
- COMMON         0x0080068e       0x5d /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
-                0x0080068e                copro_ticks_offset_r
-                0x00800690                copro_ticks_offset_l
-                0x00800692                copro_current_l
-                0x00800694                copro_commands
-                0x008006a9                copro_ticks_l
-                0x008006ab                copro_rc5_cmd
-                0x008006ad                copro_distance
-                0x008006b7                copro_pos_x
-                0x008006bb                copro_pos_ori
-                0x008006bf                copro_speed_r
-                0x008006c1                copro_ticks_r
-                0x008006c3                copro_pos_y
-                0x008006c7                copro_ir_mode
-                0x008006c8                copro_rc5_count
-                0x008006c9                copro_current_r
-                0x008006cb                copro_buffer
-                0x008006e6                copro_target_distance
-                0x008006e8                copro_seq
-                0x008006e9                copro_speed_l
- COMMON         0x008006eb        0x2 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
-                0x008006eb                bot_supply
- COMMON         0x008006ed        0xe /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
-                0x008006ed                pwm_channel_A
-                0x008006ef                pwm_channel_B
-                0x008006f1                pwm_timer_ms
-                0x008006f3                pwm_channel_C
-                0x008006f5                pwm_timer_sub
-                0x008006f7                pwm_timer_sec
- COMMON         0x008006fb        0x2 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
-                0x008006fb                adc_random_seed
- COMMON         0x008006fd       0x1a /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
-                0x008006fd                i2c_buf
-                0x00800711                i2c_state
-                0x00800712                i2c_size
-                0x00800713                i2c_last_TWSR
-                0x00800714                i2c_tx_size
-                0x00800715                i2c_pos
-                0x00800716                i2c_rx_size
- COMMON         0x00800717       0xc4 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
-                0x00800717                nds3_distcalib_alpha
-                0x00800719                nds3_servocalib_mid
-                0x0080071b                nds3_pin
-                0x0080071c                nds3_ddr
-                0x0080071d                nds3_distances
-                0x008007d2                nds3_port
-                0x008007d3                nds3_servocalib_lo
-                0x008007d5                nds3_distcalib_v0
-                0x008007d7                nds3_distcalib_d0
-                0x008007d9                nds3_servocalib_hi
-                0x008007db                PROVIDE (__bss_end, .)
-                0x000038c0                __data_load_start = LOADADDR (.data)
-                0x00003c3c                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x0080053c        0xa ./src/xbee/niboCom.o
+                0x0080053c                buffer
+ COMMON         0x00800546       0xfe ./src/xbee/uart0.o
+                0x00800546                uart0_txbuf_begin
+                0x00800547                uart0_rxbuf
+                0x00800579                uart0_txbuf
+                0x00800641                uart0_rxbuf_begin
+                0x00800642                uart0_rxbuf_end
+                0x00800643                uart0_txbuf_end
+ COMMON         0x00800644        0x2 ./src/main.o
+                0x00800644                nds_scan
+ COMMON         0x00800646        0x1 /home/defaultuser/nibolib/lib/libnibo2.a(display.o)
+                0x00800646                display_type
+ COMMON         0x00800647       0x3e /home/defaultuser/nibolib/lib/libnibo2.a(spi.o)
+                0x00800647                spi_tx_buf
+                0x00800662                spi_rx_size
+                0x00800663                spi_err_cnt
+                0x00800664                spi_tx_size
+                0x00800665                spi_frame_cnt
+                0x00800666                spi_size
+                0x00800667                spi_rx_buf
+                0x00800682                spi_tx_chk
+                0x00800683                spi_pos
+                0x00800684                spi_rx_chk
+ COMMON         0x00800685        0xe /home/defaultuser/nibolib/lib/libnibo2.a(gfx.o)
+                0x00800685                gfx_dm
+                0x00800686                gfx_term_row
+                0x00800687                gfx_proportional
+                0x00800688                gfx_x
+                0x00800689                gfx_tile
+                0x00800691                gfx_y
+                0x00800692                gfx_term_col
+ COMMON         0x00800693       0x5d /home/defaultuser/nibolib/lib/libnibo2.a(copro.o)
+                0x00800693                copro_ticks_offset_r
+                0x00800695                copro_ticks_offset_l
+                0x00800697                copro_current_l
+                0x00800699                copro_commands
+                0x008006ae                copro_ticks_l
+                0x008006b0                copro_rc5_cmd
+                0x008006b2                copro_distance
+                0x008006bc                copro_pos_x
+                0x008006c0                copro_pos_ori
+                0x008006c4                copro_speed_r
+                0x008006c6                copro_ticks_r
+                0x008006c8                copro_pos_y
+                0x008006cc                copro_ir_mode
+                0x008006cd                copro_rc5_count
+                0x008006ce                copro_current_r
+                0x008006d0                copro_buffer
+                0x008006eb                copro_target_distance
+                0x008006ed                copro_seq
+                0x008006ee                copro_speed_l
+ COMMON         0x008006f0        0x2 /home/defaultuser/nibolib/lib/libnibo2.a(bot.o)
+                0x008006f0                bot_supply
+ COMMON         0x008006f2        0xe /home/defaultuser/nibolib/lib/libnibo2.a(pwm.o)
+                0x008006f2                pwm_channel_A
+                0x008006f4                pwm_channel_B
+                0x008006f6                pwm_timer_ms
+                0x008006f8                pwm_channel_C
+                0x008006fa                pwm_timer_sub
+                0x008006fc                pwm_timer_sec
+ COMMON         0x00800700        0x2 /home/defaultuser/nibolib/lib/libnibo2.a(adc.o)
+                0x00800700                adc_random_seed
+ COMMON         0x00800702       0x1a /home/defaultuser/nibolib/lib/libnds3.a(i2cmaster.o)
+                0x00800702                i2c_buf
+                0x00800716                i2c_state
+                0x00800717                i2c_size
+                0x00800718                i2c_last_TWSR
+                0x00800719                i2c_tx_size
+                0x0080071a                i2c_pos
+                0x0080071b                i2c_rx_size
+ COMMON         0x0080071c       0xc4 /home/defaultuser/nibolib/lib/libnds3.a(nds3.o)
+                0x0080071c                nds3_distcalib_alpha
+                0x0080071e                nds3_servocalib_mid
+                0x00800720                nds3_pin
+                0x00800721                nds3_ddr
+                0x00800722                nds3_distances
+                0x008007d7                nds3_port
+                0x008007d8                nds3_servocalib_lo
+                0x008007da                nds3_distcalib_v0
+                0x008007dc                nds3_distcalib_d0
+                0x008007de                nds3_servocalib_hi
+                0x008007e0                PROVIDE (__bss_end, .)
+                0x00003958                __data_load_start = LOADADDR (.data)
+                0x00003cd6                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x008007db        0x0
-                0x008007db                PROVIDE (__noinit_start, .)
+.noinit         0x008007e0        0x0
+                0x008007e0                PROVIDE (__noinit_start, .)
  *(.noinit*)
-                0x008007db                PROVIDE (__noinit_end, .)
-                0x008007db                _end = .
-                0x008007db                PROVIDE (__heap_start, .)
+                0x008007e0                PROVIDE (__noinit_end, .)
+                0x008007e0                _end = .
+                0x008007e0                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
  *(.eeprom*)
@@ -1080,71 +1083,71 @@ LOAD /usr/lib/gcc/avr/4.3.4/avr51/libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x6420
+.stab           0x00000000     0x64e0
  *(.stab)
  .stab          0x00000000      0x750 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/crtm128.o
- .stab          0x00000750      0x768 ./src/xbee/niboCom.o
-                                0x774 (size before relaxing)
- .stab          0x00000eb8      0x4e0 ./src/xbee/uart0.o
+ .stab          0x00000750      0x714 ./src/xbee/niboCom.o
+                                0x720 (size before relaxing)
+ .stab          0x00000e64      0x4e0 ./src/xbee/uart0.o
                                 0x6a8 (size before relaxing)
- .stab          0x00001398      0x318 ./src/sound/n2sound.o
+ .stab          0x00001344      0x318 ./src/sound/n2sound.o
                                 0x4c8 (size before relaxing)
- .stab          0x000016b0      0x2c4 ./src/nds3/ndsScan.o
+ .stab          0x0000165c      0x2c4 ./src/nds3/ndsScan.o
                                 0x534 (size before relaxing)
- .stab          0x00001974      0x828 ./src/main.o
-                                0xad4 (size before relaxing)
- .stab          0x0000219c      0x534 ./src/drive/drive.o
-                                0x7ec (size before relaxing)
- .stab          0x000026d0      0x420 ./src/display/advDisplay.o
+ .stab          0x00001920      0x948 ./src/main.o
+                                0xc00 (size before relaxing)
+ .stab          0x00002268      0x528 ./src/drive/drive.o
+                                0x7c8 (size before relaxing)
+ .stab          0x00002790      0x420 ./src/display/advDisplay.o
                                 0x6d8 (size before relaxing)
- .stab          0x00002af0       0x78 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
+ .stab          0x00002bb0       0x78 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3.o)
                                  0x84 (size before relaxing)
- .stab          0x00002b68      0x4bc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
+ .stab          0x00002c28      0x4bc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(addsf3x.o)
                                 0x4c8 (size before relaxing)
- .stab          0x00003024       0x90 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
+ .stab          0x000030e4       0x90 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(cmpsf2.o)
                                  0x9c (size before relaxing)
- .stab          0x000030b4      0x318 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
+ .stab          0x00003174      0x318 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(floatsisf.o)
                                 0x324 (size before relaxing)
- .stab          0x000033cc      0x1e0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
+ .stab          0x0000348c      0x1e0 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_cmp.o)
                                 0x1ec (size before relaxing)
- .stab          0x000035ac       0x78 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
+ .stab          0x0000366c       0x78 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_inf.o)
                                  0x84 (size before relaxing)
- .stab          0x00003624       0x54 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
+ .stab          0x000036e4       0x54 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_nan.o)
                                  0x60 (size before relaxing)
- .stab          0x00003678       0x84 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
+ .stab          0x00003738       0x84 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscA.o)
                                  0x90 (size before relaxing)
- .stab          0x000036fc       0x84 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
+ .stab          0x000037bc       0x84 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_pscB.o)
                                  0x90 (size before relaxing)
- .stab          0x00003780       0xfc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
+ .stab          0x00003840       0xfc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_round.o)
                                 0x108 (size before relaxing)
- .stab          0x0000387c      0x1d4 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
+ .stab          0x0000393c      0x1d4 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_split3.o)
                                 0x1e0 (size before relaxing)
- .stab          0x00003a50       0x90 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
+ .stab          0x00003b10       0x90 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(fp_zero.o)
                                  0x9c (size before relaxing)
- .stab          0x00003ae0       0x48 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
+ .stab          0x00003ba0       0x48 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3.o)
                                  0x54 (size before relaxing)
- .stab          0x00003b28      0x4d4 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
+ .stab          0x00003be8      0x4d4 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libm.a(mulsf3x.o)
                                 0x4e0 (size before relaxing)
- .stab          0x00003ffc      0xffc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
+ .stab          0x000040bc      0xffc /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libprintf_flt.a(vfprintf_flt.o)
                                0x1044 (size before relaxing)
- .stab          0x00004ff8      0xa38 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
+ .stab          0x000050b8      0xa38 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ftoa_engine.o)
                                 0xa44 (size before relaxing)
- .stab          0x00005a30       0x9c /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
+ .stab          0x00005af0       0x9c /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen_P.o)
                                  0xa8 (size before relaxing)
- .stab          0x00005acc       0x6c /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
+ .stab          0x00005b8c       0x6c /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strcpy.o)
                                  0x78 (size before relaxing)
- .stab          0x00005b38       0x9c /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
+ .stab          0x00005bf8       0x9c /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(strnlen.o)
                                  0xa8 (size before relaxing)
- .stab          0x00005bd4      0x1d4 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
+ .stab          0x00005c94      0x1d4 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(fputc.o)
                                 0x3b4 (size before relaxing)
- .stab          0x00005da8      0x1f8 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
+ .stab          0x00005e68      0x1f8 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(sprintf.o)
                                 0x3d8 (size before relaxing)
- .stab          0x00005fa0      0x480 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
+ .stab          0x00006060      0x480 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/libc.a(ultoa_invert.o)
                                 0x48c (size before relaxing)
 
-.stabstr        0x00000000     0x20f7
+.stabstr        0x00000000     0x239f
  *(.stabstr)
- .stabstr       0x00000000     0x20f7 /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/crtm128.o
+ .stabstr       0x00000000     0x239f /usr/lib/gcc/avr/4.3.4/../../../avr/lib/avr51/crtm128.o
 
 .stab.excl
  *(.stab.excl)

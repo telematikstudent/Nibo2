@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: src/xbee/niboCom.h Source File</title>
+<title>Nummer2lebt(Martini)!: src/xbee/niboCom.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -21,65 +21,54 @@
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
-<h1>src/xbee/niboCom.h</h1><a href="niboCom_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="comment">/*</span>
-<a name="l00002"></a>00002 <span class="comment"> * niboCom.h</span>
-<a name="l00003"></a>00003 <span class="comment"> *</span>
-<a name="l00004"></a>00004 <span class="comment"> *  Created on: 23.10.2012</span>
-<a name="l00005"></a>00005 <span class="comment"> *      Author: defaultuser</span>
-<a name="l00006"></a>00006 <span class="comment"> */</span>
-<a name="l00007"></a>00007 
+<h1>src/xbee/niboCom.h</h1><a href="niboCom_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
 <a name="l00008"></a>00008 <span class="preprocessor">#ifndef NIBOCOM_H_</span>
 <a name="l00009"></a>00009 <span class="preprocessor"></span><span class="preprocessor">#define NIBOCOM_H_</span>
 <a name="l00010"></a>00010 <span class="preprocessor"></span>
-<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;nibo/niboconfig.h&gt;</span>
-<a name="l00016"></a>00016 <span class="preprocessor">#include &quot;<a class="code" href="uart0_8h.html" title="Routinen zur Kommunikation über die serielle Schnittstelle.">uart0.h</a>&quot;</span>
-<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;stdbool.h&gt;</span>
-<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;avr/interrupt.h&gt;</span>
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020 
-<a name="l00025"></a><a class="code" href="niboCom_8h.html#ac6b27d46fc5f4556eb018b7869a52dcd">00025</a> <span class="preprocessor">#define niboCom_default_baudrate 9600</span>
-<a name="l00026"></a>00026 <span class="preprocessor"></span>
-<a name="l00027"></a>00027 
-<a name="l00031"></a><a class="code" href="niboCom_8h.html#ad32fe50c7c245bc7bffc588c6cda42a3">00031</a> <span class="preprocessor">#define niboCom_cmd_none                        0</span>
-<a name="l00032"></a>00032 <span class="preprocessor"></span>
-<a name="l00033"></a>00033 <span class="comment">//mode</span>
-<a name="l00034"></a><a class="code" href="niboCom_8h.html#a4d2ebdf7610ded3e04ba253fc67b1a3e">00034</a> <span class="preprocessor">#define niboCom_cmd_nibo_auto           1</span>
-<a name="l00035"></a><a class="code" href="niboCom_8h.html#addecbb6330e175b63cc48528ae228f32">00035</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_man            2</span>
-<a name="l00036"></a>00036 <span class="preprocessor"></span>
-<a name="l00037"></a><a class="code" href="niboCom_8h.html#aac72346bf2589e5abee89af3e5e1d4ac">00037</a> <span class="preprocessor">#define niboCom_cmd_ir_distance         3</span>
-<a name="l00038"></a><a class="code" href="niboCom_8h.html#a8cae1156e5197441e097365ca1e576f4">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nds_distance        4</span>
-<a name="l00039"></a><a class="code" href="niboCom_8h.html#ad09991459a1b0f370c29f455a3da429e">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_distance       5</span>
-<a name="l00040"></a><a class="code" href="niboCom_8h.html#a53dbd31f743bacf7b03120f99d5c1568">00040</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_drive          6</span>
-<a name="l00041"></a><a class="code" href="niboCom_8h.html#a39c08e302ca02ef9e3d811716dc6a521">00041</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_stop           7</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="comment">//directions</span>
-<a name="l00043"></a><a class="code" href="niboCom_8h.html#a982aacc0b1b590c39f3d0794ecd75345">00043</a> <span class="preprocessor">#define niboCom_cmd_nibo_turn           10</span>
-<a name="l00044"></a><a class="code" href="niboCom_8h.html#a73bf7db841a13000a3e574ebf690798f">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_halfLeft       11</span>
-<a name="l00045"></a><a class="code" href="niboCom_8h.html#a0274c174b0f859599bb59ac885375196">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_left           12</span>
-<a name="l00046"></a><a class="code" href="niboCom_8h.html#ab3e21c1773efa9984822c86f5ac3b4b0">00046</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_halfRight      13</span>
-<a name="l00047"></a><a class="code" href="niboCom_8h.html#aaa4427da9145c4079ad7c935055cf2fd">00047</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_right          14</span>
-<a name="l00048"></a>00048 <span class="preprocessor"></span>
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#af98ea146a076d51931cc31b7f1434d09">niboCom_uartInterrupt</a>();
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#a7ce95eef0977ffbd7fd01ce2898f0eb1">niboCom_init</a>();
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#ac3efeca34dfb503cac3d07d421a49b81">niboCom_init_with_baud</a>(uint16_t baudrate);
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#a7b4a49fd74ddce73f2d21c8237d35f82">niboCom_putIRDistance</a>(uint16_t *data);
-<a name="l00058"></a>00058 
-<a name="l00059"></a>00059 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#a6141747e15bea2a63d51a7cdfbce2435">niboCom_putNDSDistance</a>(uint8_t size, uint8_t *data);
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c">niboCom_putDircetionChange</a>(uint8_t direction);
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#a436a5c45d09aa907f0592f30f6ba340c">niboCom_putDistance</a>(uint8_t ticks);
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;stdbool.h&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;avr/interrupt.h&gt;</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;nibo/niboconfig.h&gt;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#include &quot;<a class="code" href="uart0_8h.html" title="Routinen zur Kommunikation über die serielle Schnittstelle.">uart0.h</a>&quot;</span>
+<a name="l00018"></a>00018 
+<a name="l00023"></a><a class="code" href="niboCom_8h.html#ac6b27d46fc5f4556eb018b7869a52dcd">00023</a> <span class="preprocessor">#define niboCom_default_baudrate 9600</span>
+<a name="l00024"></a><a class="code" href="niboCom_8h.html#a1d11fb055f7670f463b9ced985f7f589">00024</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_bufferSize 10</span>
+<a name="l00025"></a>00025 <span class="preprocessor"></span>
+<a name="l00029"></a><a class="code" href="niboCom_8h.html#ad32fe50c7c245bc7bffc588c6cda42a3">00029</a> <span class="preprocessor">#define niboCom_cmd_none                        0</span>
+<a name="l00030"></a>00030 <span class="preprocessor"></span>
+<a name="l00031"></a>00031 <span class="comment">//mode</span>
+<a name="l00032"></a><a class="code" href="niboCom_8h.html#a4d2ebdf7610ded3e04ba253fc67b1a3e">00032</a> <span class="preprocessor">#define niboCom_cmd_nibo_auto           1</span>
+<a name="l00033"></a><a class="code" href="niboCom_8h.html#addecbb6330e175b63cc48528ae228f32">00033</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_man            2</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>
+<a name="l00035"></a><a class="code" href="niboCom_8h.html#aac72346bf2589e5abee89af3e5e1d4ac">00035</a> <span class="preprocessor">#define niboCom_cmd_ir_distance         3</span>
+<a name="l00036"></a><a class="code" href="niboCom_8h.html#a8cae1156e5197441e097365ca1e576f4">00036</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nds_distance        4</span>
+<a name="l00037"></a><a class="code" href="niboCom_8h.html#ad09991459a1b0f370c29f455a3da429e">00037</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_distance       5</span>
+<a name="l00038"></a><a class="code" href="niboCom_8h.html#a53dbd31f743bacf7b03120f99d5c1568">00038</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_drive          6</span>
+<a name="l00039"></a><a class="code" href="niboCom_8h.html#a39c08e302ca02ef9e3d811716dc6a521">00039</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_stop           7</span>
+<a name="l00040"></a>00040 <span class="preprocessor"></span><span class="comment">//directions</span>
+<a name="l00041"></a><a class="code" href="niboCom_8h.html#a982aacc0b1b590c39f3d0794ecd75345">00041</a> <span class="preprocessor">#define niboCom_cmd_nibo_turn           10</span>
+<a name="l00042"></a><a class="code" href="niboCom_8h.html#a73bf7db841a13000a3e574ebf690798f">00042</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_halfLeft       11</span>
+<a name="l00043"></a><a class="code" href="niboCom_8h.html#a0274c174b0f859599bb59ac885375196">00043</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_left           12</span>
+<a name="l00044"></a><a class="code" href="niboCom_8h.html#ab3e21c1773efa9984822c86f5ac3b4b0">00044</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_halfRight      13</span>
+<a name="l00045"></a><a class="code" href="niboCom_8h.html#aaa4427da9145c4079ad7c935055cf2fd">00045</a> <span class="preprocessor"></span><span class="preprocessor">#define niboCom_cmd_nibo_right          14</span>
+<a name="l00046"></a>00046 <span class="preprocessor"></span>
+<a name="l00050"></a>00050 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#a7ce95eef0977ffbd7fd01ce2898f0eb1" title="initializes xbee communication">niboCom_init</a>();
+<a name="l00051"></a>00051 
+<a name="l00056"></a>00056 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#a7b4a49fd74ddce73f2d21c8237d35f82" title="sends a IRDistance packet via xbee">niboCom_putIRDistance</a>(uint16_t *data);
+<a name="l00057"></a>00057 
+<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#a6141747e15bea2a63d51a7cdfbce2435" title="sends a NDSDistance packet via xbee">niboCom_putNDSDistance</a>(uint8_t size, uint8_t *data);
 <a name="l00064"></a>00064 
-<a name="l00065"></a>00065 uint8_t <a class="code" href="niboCom_8c.html#a76ad9e6afaec69b482c1e058380dc46f">niboCom_getCMD</a>();
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068 <span class="preprocessor">#endif </span><span class="comment">/* NIBOCOM_H_ */</span>
+<a name="l00069"></a>00069 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c" title="sends a DirectionChange packet via xbee">niboCom_putDircetionChange</a>(uint8_t direction);
+<a name="l00070"></a>00070 
+<a name="l00075"></a>00075 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#a436a5c45d09aa907f0592f30f6ba340c" title="sends a Distance packet via xbee">niboCom_putDistance</a>(uint8_t ticks);
+<a name="l00076"></a>00076 
+<a name="l00082"></a>00082 uint8_t <a class="code" href="niboCom_8c.html#a76ad9e6afaec69b482c1e058380dc46f" title="tries to catch a command send via xbee">niboCom_getCMD</a>();
+<a name="l00083"></a>00083 
+<a name="l00088"></a>00088 <span class="keywordtype">void</span> <a class="code" href="niboCom_8c.html#af98ea146a076d51931cc31b7f1434d09" title="is called on the USART0_RX_vect interrupt, receives char send via xbee and tries...">niboCom_uartInterrupt</a>();
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 <span class="preprocessor">#endif </span><span class="comment">/* NIBOCOM_H_ */</span>
 </pre></div></div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:40 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

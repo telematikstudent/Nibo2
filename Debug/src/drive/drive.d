@@ -6,7 +6,6 @@ src/drive/drive.d src/drive/drive.o: ../src/drive/drive.c \
   /home/defaultuser/nibolib/include/nibo/bot.h \
   /home/defaultuser/nibolib/include/nibo/copro.h \
   /home/defaultuser/nibolib/include/nibo/spi.h \
-  /home/defaultuser/nibolib/include/nibo/leds.h \
   /home/defaultuser/nibolib/include/nibo/delay.h \
   ../src/drive/../xbee/niboCom.h ../src/drive/../xbee/uart0.h
 
@@ -23,8 +22,6 @@ src/drive/drive.d src/drive/drive.o: ../src/drive/drive.c \
 /home/defaultuser/nibolib/include/nibo/copro.h:
 
 /home/defaultuser/nibolib/include/nibo/spi.h:
-
-/home/defaultuser/nibolib/include/nibo/leds.h:
 
 /home/defaultuser/nibolib/include/nibo/delay.h:
 

@@ -1,39 +1,66 @@
-/*
- * Main.h
- *
- *  Created on: 26.11.2012
- *      Author: Abjo
+/**
+ * @file		main.c
+ * @author		Phillip Kopprasch, Marcus Tenbusch, Christian Witte
+ * @date		Version 0.1
+ * @brief		Headerfile: Main program for nibo, including the main loop.
  */
+
 
 #ifndef MAIN_H_
 #define MAIN_H_
 
-// Standard Includes fuer das Funktionieren des Nibo2
+/**
+ * includes
+ */
+
+/**
+ * stdlib
+ */
+#include <stdbool.h>
+
+/**
+ * nibo
+ */
 #include <nibo/niboconfig.h>
 #include <nibo/iodefs.h>
 #include <nibo/bot.h>
 #include <nibo/delay.h>
-#include <avr/interrupt.h>
-#include <stdbool.h>
-#include "xbee/niboCom.h"
-#include "drive/drive.h"
-#include "display/advDisplay.h"
-#include "nibo/i2cmaster.h"
-#include "nds3/ndsScan.h"
+#include <nibo/leds.h>
 #include <nibo/sound.h>
 #include "sound/n2sound.h"
 
-#define MODE_AUTO		1
+/**
+ * AVR
+ */
+#include <avr/interrupt.h>
+
+/**
+ * Martini
+ */
+#include "xbee/niboCom.h"
+#include "drive/drive.h"
+#include "display/advDisplay.h"
+#include "nds3/ndsScan.h"
+
+
+/**
+ * defines
+ */
 
 #define MODE_MAN		0
 
+#define MODE_AUTO		1
+
 #define NDS_SCAN_DEG	2
 
+/**
+ * @brief moves the nibo around automagically
+ */
+void autoMode();
 
-void initBot();
-void reset(uint8_t LastStatus,uint8_t status);
-
-
-
+/**
+ * @brief checks the values of the IR-sensors and switches the leds depending on the value.
+ */
+void checkDistance();
 
 #endif /* MAIN_H_ */

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: src/xbee/niboCom.h File Reference</title>
+<title>Nummer2lebt(Martini)!: src/xbee/niboCom.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -23,15 +23,19 @@
   </div>
 </div>
 <div class="contents">
-<h1>src/xbee/niboCom.h File Reference</h1><code>#include &lt;nibo/niboconfig.h&gt;</code><br/>
-<code>#include &quot;<a class="el" href="niboCom_8h_source.html">uart0.h</a>&quot;</code><br/>
+<h1>src/xbee/niboCom.h File Reference</h1>
+<p>Headerfile: library for nibo2pc communication.  
+<a href="#_details">More...</a></p>
 <code>#include &lt;stdbool.h&gt;</code><br/>
 <code>#include &lt;avr/interrupt.h&gt;</code><br/>
+<code>#include &lt;nibo/niboconfig.h&gt;</code><br/>
+<code>#include &quot;<a class="el" href="niboCom_8h_source.html">uart0.h</a>&quot;</code><br/>
 
 <p><a href="niboCom_8h_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#ac6b27d46fc5f4556eb018b7869a52dcd">niboCom_default_baudrate</a>&nbsp;&nbsp;&nbsp;9600</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#a1d11fb055f7670f463b9ced985f7f589">niboCom_bufferSize</a>&nbsp;&nbsp;&nbsp;10</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#ad32fe50c7c245bc7bffc588c6cda42a3">niboCom_cmd_none</a>&nbsp;&nbsp;&nbsp;0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#a4d2ebdf7610ded3e04ba253fc67b1a3e">niboCom_cmd_nibo_auto</a>&nbsp;&nbsp;&nbsp;1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#addecbb6330e175b63cc48528ae228f32">niboCom_cmd_nibo_man</a>&nbsp;&nbsp;&nbsp;2</td></tr>
@@ -46,16 +50,43 @@
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#ab3e21c1773efa9984822c86f5ac3b4b0">niboCom_cmd_nibo_halfRight</a>&nbsp;&nbsp;&nbsp;13</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#aaa4427da9145c4079ad7c935055cf2fd">niboCom_cmd_nibo_right</a>&nbsp;&nbsp;&nbsp;14</td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#af98ea146a076d51931cc31b7f1434d09">niboCom_uartInterrupt</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#a7ce95eef0977ffbd7fd01ce2898f0eb1">niboCom_init</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#ac3efeca34dfb503cac3d07d421a49b81">niboCom_init_with_baud</a> (uint16_t baudrate)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">initializes xbee communication  <a href="#a7ce95eef0977ffbd7fd01ce2898f0eb1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#a7b4a49fd74ddce73f2d21c8237d35f82">niboCom_putIRDistance</a> (uint16_t *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends a IRDistance packet via xbee  <a href="#a7b4a49fd74ddce73f2d21c8237d35f82"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#a6141747e15bea2a63d51a7cdfbce2435">niboCom_putNDSDistance</a> (uint8_t size, uint8_t *data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends a NDSDistance packet via xbee  <a href="#a6141747e15bea2a63d51a7cdfbce2435"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#ac2c2c2467adfe3e1a958f04227ebba6c">niboCom_putDircetionChange</a> (uint8_t direction)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends a DirectionChange packet via xbee  <a href="#ac2c2c2467adfe3e1a958f04227ebba6c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#a436a5c45d09aa907f0592f30f6ba340c">niboCom_putDistance</a> (uint8_t ticks)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends a Distance packet via xbee  <a href="#a436a5c45d09aa907f0592f30f6ba340c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#a76ad9e6afaec69b482c1e058380dc46f">niboCom_getCMD</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">tries to catch a command send via xbee  <a href="#a76ad9e6afaec69b482c1e058380dc46f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="niboCom_8h.html#af98ea146a076d51931cc31b7f1434d09">niboCom_uartInterrupt</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">is called on the USART0_RX_vect interrupt, receives char send via xbee and tries to recognize niboCom packets  <a href="#af98ea146a076d51931cc31b7f1434d09"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Headerfile: library for nibo2pc communication. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Phillip Kopprasch </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>Version 0.1 </dd></dl>
+
+<p>Definition in file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 <hr/><h2>Define Documentation</h2>
+<a class="anchor" id="a1d11fb055f7670f463b9ced985f7f589"></a><!-- doxytag: member="niboCom.h::niboCom_bufferSize" ref="a1d11fb055f7670f463b9ced985f7f589" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define niboCom_bufferSize&nbsp;&nbsp;&nbsp;10</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00024">24</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="aac72346bf2589e5abee89af3e5e1d4ac"></a><!-- doxytag: member="niboCom.h::niboCom_cmd_ir_distance" ref="aac72346bf2589e5abee89af3e5e1d4ac" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -67,9 +98,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00037">37</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00035">35</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00065">niboCom_putIRDistance()</a>.</p>
+<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00082">niboCom_putIRDistance()</a>.</p>
 
 </div>
 </div>
@@ -84,9 +115,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00038">38</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00036">36</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>, and <a class="el" href="niboCom_8c_source.html#l00075">niboCom_putNDSDistance()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, <a class="el" href="main_8c_source.html#l00102">main()</a>, and <a class="el" href="niboCom_8c_source.html#l00098">niboCom_putNDSDistance()</a>.</p>
 
 </div>
 </div>
@@ -101,9 +132,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00034">34</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00032">32</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -118,9 +149,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00039">39</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00037">37</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00085">niboCom_putDistance()</a>.</p>
+<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00114">niboCom_putDistance()</a>.</p>
 
 </div>
 </div>
@@ -135,9 +166,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00040">40</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00038">38</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -152,9 +183,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00044">44</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00042">42</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00038">drive_turn_halfLeft()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00069">drive_turn_halfLeft()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -169,9 +200,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00046">46</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00044">44</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00050">drive_turn_halfRight()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00087">drive_turn_halfRight()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -186,9 +217,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00045">45</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00043">43</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00032">drive_turn_left()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00060">drive_turn_left()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -203,9 +234,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00035">35</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00033">33</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -220,9 +251,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00047">47</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00045">45</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00044">drive_turn_right()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00078">drive_turn_right()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -237,9 +268,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00041">41</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00039">39</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -254,9 +285,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00043">43</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00041">41</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00056">drive_turn_around()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00096">drive_turn_around()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -270,11 +301,11 @@
       </table>
 </div>
 <div class="memdoc">
-<p>comands </p>
+<p>niboCom comands </p>
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00031">31</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00029">29</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>, and <a class="el" href="niboCom_8c_source.html#l00090">niboCom_getCMD()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, <a class="el" href="main_8c_source.html#l00102">main()</a>, and <a class="el" href="niboCom_8c_source.html#l00123">niboCom_getCMD()</a>.</p>
 
 </div>
 </div>
@@ -290,9 +321,9 @@
 <div class="memdoc">
 <p>includes defines </p>
 
-<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00025">25</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8h_source.html#l00023">23</a> of file <a class="el" href="niboCom_8h_source.html">niboCom.h</a>.</p>
 
-<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00031">niboCom_init()</a>.</p>
+<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00033">niboCom_init()</a>.</p>
 
 </div>
 </div>
@@ -312,11 +343,14 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00090">90</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
+<p>tries to catch a command send via xbee </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the last command received via xbee or <a class="el" href="niboCom_8h.html#ad32fe50c7c245bc7bffc588c6cda42a3">niboCom_cmd_none(0)</a> if no new command was received </dd></dl>
 
-<p>References <a class="el" href="niboCom_8c_source.html#l00025">lastCMD</a>, and <a class="el" href="niboCom_8h_source.html#l00031">niboCom_cmd_none</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00123">123</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="niboCom_8c_source.html#l00018">lastCMD</a>, and <a class="el" href="niboCom_8h_source.html#l00029">niboCom_cmd_none</a>.</p>
+
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -335,49 +369,13 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00031">31</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
+<p>initializes xbee communication </p>
 
-<p>References <a class="el" href="niboCom_8h_source.html#l00025">niboCom_default_baudrate</a>, and <a class="el" href="niboCom_8c_source.html#l00035">niboCom_init_with_baud()</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00033">33</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00037">initBot()</a>.</p>
+<p>References <a class="el" href="niboCom_8h_source.html#l00023">niboCom_default_baudrate</a>, <a class="el" href="uart0_8c_source.html#l00123">uart0_enable()</a>, and <a class="el" href="uart0_8c_source.html#l00060">uart0_set_baudrate()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="niboCom_8h_a7ce95eef0977ffbd7fd01ce2898f0eb1_cgraph.png" border="0" usemap="#niboCom_8h_a7ce95eef0977ffbd7fd01ce2898f0eb1_cgraph_map" alt=""></div>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ac3efeca34dfb503cac3d07d421a49b81"></a><!-- doxytag: member="niboCom.h::niboCom_init_with_baud" ref="ac3efeca34dfb503cac3d07d421a49b81" args="(uint16_t baudrate)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void niboCom_init_with_baud </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&nbsp;</td>
-          <td class="paramname"> <em>baudrate</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00035">35</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
-
-<p>References <a class="el" href="uart0_8c_source.html#l00123">uart0_enable()</a>, and <a class="el" href="uart0_8c_source.html#l00060">uart0_set_baudrate()</a>.</p>
-
-<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00031">niboCom_init()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="niboCom_8h_ac3efeca34dfb503cac3d07d421a49b81_cgraph.png" border="0" usemap="#niboCom_8h_ac3efeca34dfb503cac3d07d421a49b81_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00045">initBot()</a>.</p>
 
 </div>
 </div>
@@ -397,18 +395,19 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00080">80</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
+<p>sends a DirectionChange packet via xbee </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>direction</em>&nbsp;</td><td>the direction change the nibo made </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>References <a class="el" href="niboCom_8c_source.html#l00053">niboCom_putPackage()</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00106">106</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00056">drive_turn_around()</a>, <a class="el" href="drive_8c_source.html#l00038">drive_turn_halfLeft()</a>, <a class="el" href="drive_8c_source.html#l00050">drive_turn_halfRight()</a>, <a class="el" href="drive_8c_source.html#l00032">drive_turn_left()</a>, and <a class="el" href="drive_8c_source.html#l00044">drive_turn_right()</a>.</p>
+<p>References <a class="el" href="niboCom_8c_source.html#l00063">niboCom_putPacket()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="niboCom_8h_ac2c2c2467adfe3e1a958f04227ebba6c_cgraph.png" border="0" usemap="#niboCom_8h_ac2c2c2467adfe3e1a958f04227ebba6c_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00096">drive_turn_around()</a>, <a class="el" href="drive_8c_source.html#l00069">drive_turn_halfLeft()</a>, <a class="el" href="drive_8c_source.html#l00087">drive_turn_halfRight()</a>, <a class="el" href="drive_8c_source.html#l00060">drive_turn_left()</a>, and <a class="el" href="drive_8c_source.html#l00078">drive_turn_right()</a>.</p>
 
 </div>
 </div>
@@ -428,18 +427,19 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00085">85</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
+<p>sends a Distance packet via xbee </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ticks</em>&nbsp;</td><td>the number of ticks the nibo moved </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>References <a class="el" href="niboCom_8h_source.html#l00039">niboCom_cmd_nibo_distance</a>, and <a class="el" href="niboCom_8c_source.html#l00053">niboCom_putPackage()</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00114">114</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00107">drive_sendTicks()</a>.</p>
+<p>References <a class="el" href="niboCom_8h_source.html#l00037">niboCom_cmd_nibo_distance</a>, and <a class="el" href="niboCom_8c_source.html#l00063">niboCom_putPacket()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="niboCom_8h_a436a5c45d09aa907f0592f30f6ba340c_cgraph.png" border="0" usemap="#niboCom_8h_a436a5c45d09aa907f0592f30f6ba340c_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00140">drive_sendTicks()</a>.</p>
 
 </div>
 </div>
@@ -459,18 +459,19 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00065">65</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
+<p>sends a IRDistance packet via xbee </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the values of the ir sensors </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>References <a class="el" href="niboCom_8h_source.html#l00037">niboCom_cmd_ir_distance</a>, and <a class="el" href="niboCom_8c_source.html#l00053">niboCom_putPackage()</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00082">82</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00116">drive_sendIRDistance()</a>.</p>
+<p>References <a class="el" href="niboCom_8h_source.html#l00035">niboCom_cmd_ir_distance</a>, and <a class="el" href="niboCom_8c_source.html#l00063">niboCom_putPacket()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="niboCom_8h_a7b4a49fd74ddce73f2d21c8237d35f82_cgraph.png" border="0" usemap="#niboCom_8h_a7b4a49fd74ddce73f2d21c8237d35f82_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00153">drive_sendIRDistance()</a>.</p>
 
 </div>
 </div>
@@ -499,18 +500,20 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00075">75</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
+<p>sends a NDSDistance packet via xbee </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>size</em>&nbsp;</td><td>the number of nds values </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em>data</em>&nbsp;</td><td>the nds measurement values </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>References <a class="el" href="niboCom_8h_source.html#l00038">niboCom_cmd_nds_distance</a>, and <a class="el" href="niboCom_8c_source.html#l00053">niboCom_putPackage()</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00098">98</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="niboCom_8h_source.html#l00036">niboCom_cmd_nds_distance</a>, and <a class="el" href="niboCom_8c_source.html#l00063">niboCom_putPacket()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="niboCom_8h_a6141747e15bea2a63d51a7cdfbce2435_cgraph.png" border="0" usemap="#niboCom_8h_a6141747e15bea2a63d51a7cdfbce2435_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -529,23 +532,18 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00101">101</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
+<p>is called on the USART0_RX_vect interrupt, receives char send via xbee and tries to recognize niboCom packets </p>
 
-<p>References <a class="el" href="niboCom_8c_source.html#l00028">buffer</a>, <a class="el" href="niboCom_8c_source.html#l00029">bufferPos</a>, <a class="el" href="niboCom_8c_source.html#l00025">lastCMD</a>, <a class="el" href="niboCom_8c_source.html#l00047">niboCom_getchar()</a>, and <a class="el" href="niboCom_8c_source.html#l00023">startSign</a>.</p>
+<p>Definition at line <a class="el" href="niboCom_8c_source.html#l00137">137</a> of file <a class="el" href="niboCom_8c_source.html">niboCom.c</a>.</p>
+
+<p>References <a class="el" href="niboCom_8c_source.html#l00023">buffer</a>, <a class="el" href="niboCom_8c_source.html#l00028">bufferPos</a>, <a class="el" href="niboCom_8c_source.html#l00018">lastCMD</a>, <a class="el" href="niboCom_8c_source.html#l00052">niboCom_getchar()</a>, and <a class="el" href="niboCom_8c_source.html#l00013">startSignReceived</a>.</p>
 
 <p>Referenced by <a class="el" href="uart0_8c_source.html#l00133">ISR()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="niboCom_8h_af98ea146a076d51931cc31b7f1434d09_cgraph.png" border="0" usemap="#niboCom_8h_af98ea146a076d51931cc31b7f1434d09_cgraph_map" alt=""></div>
-</div>
-</p>
-
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:41 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

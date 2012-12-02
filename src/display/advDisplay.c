@@ -1,10 +1,8 @@
 /**
- ============================================================================
- @file       : advDisplay.c
- @author     : Marcus Tenbusch
- @date	     : Version 1.0
- @brief		 : advanced library for the nibo display
- ============================================================================
+ * @file		advDisplay.c
+ * @author		Marcus Tenbusch
+ * @date		Version 0.1
+ * @brief		advanced library for the nibo display.
  */
 
 /**
@@ -33,7 +31,6 @@ int terminal_head = 0;
  */
 int terminal_count = 0;
 
-
 /**
  * @brief prints the current Voltage on the display
  */
@@ -55,7 +52,6 @@ void advDisplay_printVoltage(){
 		gfx_print_text(output);
 }
 
-
 /**
  *	@brief initializes the advanced Display library
  */
@@ -68,7 +64,6 @@ void advDisplay_init(){
 	gfx_move(0,0);
 	gfx_draw_xbm_P(logo_width, logo_height, (PGM_P) logo_bits);
 }
-
 
 /**
  *	@brief clears the terminal area of the display
@@ -98,7 +93,7 @@ void advDisplay_clear(){
 
 /**
  *	@brief appends a line to the advDisplay terminal -> display can show the last #terminal_lines lines
- *	@param string to append
+ *	@param txt string to append
  */
 void advDisplay_append_line(char *txt){
 
@@ -114,7 +109,6 @@ void advDisplay_append_line(char *txt){
 	else{
 		terminal_head = (terminal_head++)%terminal_lines;
 	}
-
 	//refresh the terminal output on the display
 	advDisplay_printTerminal();
 }
@@ -140,12 +134,3 @@ void advDisplay_printTerminal(){
 	}
 
 }
-
-
-
-
-
-
-
-
-

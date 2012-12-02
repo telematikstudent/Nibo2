@@ -1,0 +1,13 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="ISR",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="niboCom_uartInterrupt",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#af98ea146a076d51931cc31b7f1434d09",tooltip="is called on the USART0_RX_vect interrupt, receives char send via xbee and tries..."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="niboCom_getchar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#ab2e01bdd154a68c7a575b61b6ca3a9e2",tooltip="tries receive a char via xbee. Non-Blocking function."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="uart0_getchar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uart0_8c.html#a0d8efadffd0a9c0e30073a723abc0208"];
+}

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: Data Fields</title>
+<title>Nummer2lebt(Martini)!: Data Fields</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -42,7 +42,6 @@
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
       <li><a href="#index_n"><span>n</span></a></li>
-      <li><a href="#index_r"><span>r</span></a></li>
       <li><a href="#index_s"><span>s</span></a></li>
       <li><a href="#index_t"><span>t</span></a></li>
       <li><a href="#index_u"><span>u</span></a></li>
@@ -87,8 +86,8 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 , <a class="el" href="advDisplay_8h.html#a810800b1b783e6ea09de3bc279a6075b">advDisplay.h</a>
 </li>
 <li>advDisplay_init()
-: <a class="el" href="advDisplay_8h.html#a5aa9db7de45ec65b37caa87d699a93e7">advDisplay.h</a>
-, <a class="el" href="advDisplay_8c.html#a5aa9db7de45ec65b37caa87d699a93e7">advDisplay.c</a>
+: <a class="el" href="advDisplay_8c.html#a5aa9db7de45ec65b37caa87d699a93e7">advDisplay.c</a>
+, <a class="el" href="advDisplay_8h.html#a5aa9db7de45ec65b37caa87d699a93e7">advDisplay.h</a>
 </li>
 <li>advDisplay_printTerminal()
 : <a class="el" href="advDisplay_8c.html#a0781f97ba4c33e17c557718fb50856d6">advDisplay.c</a>
@@ -99,6 +98,7 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 </li>
 <li>autoMode()
 : <a class="el" href="main_8c.html#a6203cf7730a43127dc43ea7afbd43e4d">main.c</a>
+, <a class="el" href="main_8h.html#a6203cf7730a43127dc43ea7afbd43e4d">main.h</a>
 </li>
 </ul>
 
@@ -155,6 +155,7 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 </li>
 <li>checkDistance()
 : <a class="el" href="main_8c.html#aa4018b7c00365f5bab82afe573e2406b">main.c</a>
+, <a class="el" href="main_8h.html#aa4018b7c00365f5bab82afe573e2406b">main.h</a>
 </li>
 </ul>
 
@@ -331,14 +332,14 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 <h3><a class="anchor" id="index_i">- i -</a></h3><ul>
 <li>initBot()
 : <a class="el" href="main_8c.html#a87db9dcc05749f528302dd9ed81ebb62">main.c</a>
-, <a class="el" href="main_8h.html#a87db9dcc05749f528302dd9ed81ebb62">main.h</a>
 </li>
-<li>irAbstand
-: <a class="el" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">drive.h</a>
+<li>IRDistance
+: <a class="el" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">drive.h</a>
 </li>
 <li>ISR()
-: <a class="el" href="main_8c.html#a7cfcbe42bd266750aeb6e5d71e5ea479">main.c</a>
-, <a class="el" href="uart0_8c.html#a084f0a9cf05b1877bd8a71a90dae7ff8">uart0.c</a>
+: <a class="el" href="uart0_8c.html#a084f0a9cf05b1877bd8a71a90dae7ff8">uart0.c</a>
+, <a class="el" href="main_8c.html#a7cfcbe42bd266750aeb6e5d71e5ea479">main.c</a>
+, <a class="el" href="uart0_8c.html#a95e67e677722a53e3ad9f1ffce2e7408">uart0.c</a>
 </li>
 </ul>
 
@@ -355,7 +356,10 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 
 <h3><a class="anchor" id="index_m">- m -</a></h3><ul>
 <li>main()
-: <a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main.c</a>
+: <a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main.c</a>
+</li>
+<li>mode
+: <a class="el" href="main_8c.html#a37e90f5e3bd99fac2021fb3a326607d4">main.c</a>
 </li>
 <li>MODE_AUTO
 : <a class="el" href="main_8h.html#a218df7e0782356433e03c268670203e3">main.h</a>
@@ -367,19 +371,22 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 
 
 <h3><a class="anchor" id="index_n">- n -</a></h3><ul>
+<li>nds_scan
+: <a class="el" href="main_8c.html#af14ada10cf4cb3812b8a8528e3a4ab80">main.c</a>
+</li>
 <li>NDS_SCAN_DEG
 : <a class="el" href="main_8h.html#aeef97f63e8902a835466123c05b76aa5">main.h</a>
 </li>
 <li>ndsScan()
-: <a class="el" href="ndsScan_8c.html#a63c81ee3bb4ae4c79e2d8fe626398b9a">ndsScan.c</a>
-, <a class="el" href="ndsScan_8h.html#a63c81ee3bb4ae4c79e2d8fe626398b9a">ndsScan.h</a>
+: <a class="el" href="ndsScan_8h.html#ab05da9f35d22df0f5b1f5d5a289278da">ndsScan.h</a>
+, <a class="el" href="ndsScan_8c.html#ab05da9f35d22df0f5b1f5d5a289278da">ndsScan.c</a>
 </li>
 <li>ndsScan_init()
 : <a class="el" href="ndsScan_8c.html#a26da878dab6bb25af115443ce0b654b2">ndsScan.c</a>
 , <a class="el" href="ndsScan_8h.html#a26da878dab6bb25af115443ce0b654b2">ndsScan.h</a>
 </li>
 <li>niboCom_bufferSize
-: <a class="el" href="niboCom_8c.html#a1d11fb055f7670f463b9ced985f7f589">niboCom.c</a>
+: <a class="el" href="niboCom_8h.html#a1d11fb055f7670f463b9ced985f7f589">niboCom.h</a>
 </li>
 <li>niboCom_cmd_ir_distance
 : <a class="el" href="niboCom_8h.html#aac72346bf2589e5abee89af3e5e1d4ac">niboCom.h</a>
@@ -427,16 +434,12 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 : <a class="el" href="niboCom_8c.html#ab2e01bdd154a68c7a575b61b6ca3a9e2">niboCom.c</a>
 </li>
 <li>niboCom_getCMD()
-: <a class="el" href="niboCom_8h.html#a76ad9e6afaec69b482c1e058380dc46f">niboCom.h</a>
-, <a class="el" href="niboCom_8c.html#a76ad9e6afaec69b482c1e058380dc46f">niboCom.c</a>
+: <a class="el" href="niboCom_8c.html#a76ad9e6afaec69b482c1e058380dc46f">niboCom.c</a>
+, <a class="el" href="niboCom_8h.html#a76ad9e6afaec69b482c1e058380dc46f">niboCom.h</a>
 </li>
 <li>niboCom_init()
 : <a class="el" href="niboCom_8c.html#a7ce95eef0977ffbd7fd01ce2898f0eb1">niboCom.c</a>
 , <a class="el" href="niboCom_8h.html#a7ce95eef0977ffbd7fd01ce2898f0eb1">niboCom.h</a>
-</li>
-<li>niboCom_init_with_baud()
-: <a class="el" href="niboCom_8c.html#ac3efeca34dfb503cac3d07d421a49b81">niboCom.c</a>
-, <a class="el" href="niboCom_8h.html#ac3efeca34dfb503cac3d07d421a49b81">niboCom.h</a>
 </li>
 <li>niboCom_putchar()
 : <a class="el" href="niboCom_8c.html#ae1e5321f17ac250714265f5007c2c866">niboCom.c</a>
@@ -450,15 +453,15 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 , <a class="el" href="niboCom_8c.html#a436a5c45d09aa907f0592f30f6ba340c">niboCom.c</a>
 </li>
 <li>niboCom_putIRDistance()
-: <a class="el" href="niboCom_8h.html#a7b4a49fd74ddce73f2d21c8237d35f82">niboCom.h</a>
-, <a class="el" href="niboCom_8c.html#a7b4a49fd74ddce73f2d21c8237d35f82">niboCom.c</a>
+: <a class="el" href="niboCom_8c.html#a7b4a49fd74ddce73f2d21c8237d35f82">niboCom.c</a>
+, <a class="el" href="niboCom_8h.html#a7b4a49fd74ddce73f2d21c8237d35f82">niboCom.h</a>
 </li>
 <li>niboCom_putNDSDistance()
 : <a class="el" href="niboCom_8c.html#a6141747e15bea2a63d51a7cdfbce2435">niboCom.c</a>
 , <a class="el" href="niboCom_8h.html#a6141747e15bea2a63d51a7cdfbce2435">niboCom.h</a>
 </li>
-<li>niboCom_putPackage()
-: <a class="el" href="niboCom_8c.html#a98b298e6b41c23e56e4f88a319aefdda">niboCom.c</a>
+<li>niboCom_putPacket()
+: <a class="el" href="niboCom_8c.html#a2859c4990c06d21ae58d0a88d3b28467">niboCom.c</a>
 </li>
 <li>niboCom_uartInterrupt()
 : <a class="el" href="niboCom_8c.html#af98ea146a076d51931cc31b7f1434d09">niboCom.c</a>
@@ -467,16 +470,9 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 </ul>
 
 
-<h3><a class="anchor" id="index_r">- r -</a></h3><ul>
-<li>reset()
-: <a class="el" href="main_8h.html#ad0c9e3965d730c507c94b11996521f38">main.h</a>
-</li>
-</ul>
-
-
 <h3><a class="anchor" id="index_s">- s -</a></h3><ul>
-<li>startSign
-: <a class="el" href="niboCom_8c.html#a6023fa81f28b9b759a58b116611fa053">niboCom.c</a>
+<li>startSignReceived
+: <a class="el" href="niboCom_8c.html#a353474468f24c15edd828224dbf78a39">niboCom.c</a>
 </li>
 </ul>
 
@@ -514,9 +510,6 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 <li>uart0_putchar()
 : <a class="el" href="uart0_8c.html#abbeecbb2f51e542fdb5f89a26d3449da">uart0.c</a>
 </li>
-<li>uart0_rx_putchar()
-: <a class="el" href="uart0_8c.html#aeeed7d61fec0893066ee59e2958b18d9">uart0.c</a>
-</li>
 <li>uart0_rxbuf
 : <a class="el" href="uart0_8c.html#a5a214a1de1118f3634d5a5c0091a197e">uart0.c</a>
 </li>
@@ -528,9 +521,6 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 </li>
 <li>uart0_set_baudrate()
 : <a class="el" href="uart0_8c.html#aefd883941f8f6a74ed46b6af434fc758">uart0.c</a>
-</li>
-<li>uart0_tx_getchar()
-: <a class="el" href="uart0_8c.html#ad6756e5c40a4a4dc8bab9fff33a708ae">uart0.c</a>
 </li>
 <li>uart0_txbuf
 : <a class="el" href="uart0_8c.html#aa49f96e181c757a840e4cbe188d9e6f1">uart0.c</a>
@@ -550,7 +540,7 @@ Here is a list of all functions, variables, defines, enums, and typedefs with li
 </li>
 </ul>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:41 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: src/xbee/uart0.c File Reference</title>
+<title>Nummer2lebt(Martini)!: src/xbee/uart0.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -34,8 +34,6 @@
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart0_8c.html#aefd883941f8f6a74ed46b6af434fc758">uart0_set_baudrate</a> (uint16_t baud)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart0_8c.html#a0d8efadffd0a9c0e30073a723abc0208">uart0_getchar</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart0_8c.html#abbeecbb2f51e542fdb5f89a26d3449da">uart0_putchar</a> (char c)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart0_8c.html#ad6756e5c40a4a4dc8bab9fff33a708ae">uart0_tx_getchar</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart0_8c.html#aeeed7d61fec0893066ee59e2958b18d9">uart0_rx_putchar</a> (char c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart0_8c.html#af3c5c8a0b6b3725f4abda94400a5f988">uart0_enable</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart0_8c.html#a5f115d23c0de9dce8e32ee1ce3a4f931">uart0_disable</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="uart0_8c.html#a084f0a9cf05b1877bd8a71a90dae7ff8">ISR</a> (USART0_RX_vect)</td></tr>
@@ -67,15 +65,6 @@
 
 <p>Definition at line <a class="el" href="uart0_8c_source.html#l00142">142</a> of file <a class="el" href="uart0_8c_source.html">uart0.c</a>.</p>
 
-<p>References <a class="el" href="uart0_8c_source.html#l00098">uart0_tx_getchar()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="uart0_8c_a95e67e677722a53e3ad9f1ffce2e7408_cgraph.png" border="0" usemap="#uart0_8c_a95e67e677722a53e3ad9f1ffce2e7408_cgraph_map" alt=""></div>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a084f0a9cf05b1877bd8a71a90dae7ff8"></a><!-- doxytag: member="uart0.c::ISR" ref="a084f0a9cf05b1877bd8a71a90dae7ff8" args="(USART0_RX_vect)" -->
@@ -96,14 +85,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="uart0_8c_source.html#l00133">133</a> of file <a class="el" href="uart0_8c_source.html">uart0.c</a>.</p>
 
-<p>References <a class="el" href="niboCom_8c_source.html#l00101">niboCom_uartInterrupt()</a>, and <a class="el" href="uart0_8c_source.html#l00111">uart0_rx_putchar()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="uart0_8c_a084f0a9cf05b1877bd8a71a90dae7ff8_cgraph.png" border="0" usemap="#uart0_8c_a084f0a9cf05b1877bd8a71a90dae7ff8_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>References <a class="el" href="niboCom_8c_source.html#l00137">niboCom_uartInterrupt()</a>.</p>
 
 </div>
 </div>
@@ -143,7 +125,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="uart0_8c_source.html#l00123">123</a> of file <a class="el" href="uart0_8c_source.html">uart0.c</a>.</p>
 
-<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00035">niboCom_init_with_baud()</a>.</p>
+<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00033">niboCom_init()</a>.</p>
 
 </div>
 </div>
@@ -164,7 +146,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="uart0_8c_source.html#l00067">67</a> of file <a class="el" href="uart0_8c_source.html">uart0.c</a>.</p>
 
-<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00047">niboCom_getchar()</a>.</p>
+<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00052">niboCom_getchar()</a>.</p>
 
 </div>
 </div>
@@ -186,29 +168,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="uart0_8c_source.html#l00082">82</a> of file <a class="el" href="uart0_8c_source.html">uart0.c</a>.</p>
 
-<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00041">niboCom_putchar()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="aeeed7d61fec0893066ee59e2958b18d9"></a><!-- doxytag: member="uart0.c::uart0_rx_putchar" ref="aeeed7d61fec0893066ee59e2958b18d9" args="(char c)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static char uart0_rx_putchar </td>
-          <td>(</td>
-          <td class="paramtype">char&nbsp;</td>
-          <td class="paramname"> <em>c</em></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="uart0_8c_source.html#l00111">111</a> of file <a class="el" href="uart0_8c_source.html">uart0.c</a>.</p>
-
-<p>Referenced by <a class="el" href="uart0_8c_source.html#l00133">ISR()</a>.</p>
+<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00042">niboCom_putchar()</a>.</p>
 
 </div>
 </div>
@@ -230,28 +190,7 @@ Here is the call graph for this function:</div>
 
 <p>Definition at line <a class="el" href="uart0_8c_source.html#l00060">60</a> of file <a class="el" href="uart0_8c_source.html">uart0.c</a>.</p>
 
-<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00035">niboCom_init_with_baud()</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad6756e5c40a4a4dc8bab9fff33a708ae"></a><!-- doxytag: member="uart0.c::uart0_tx_getchar" ref="ad6756e5c40a4a4dc8bab9fff33a708ae" args="()" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static char uart0_tx_getchar </td>
-          <td>(</td>
-          <td class="paramname"></td>
-          <td>&nbsp;)&nbsp;</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition at line <a class="el" href="uart0_8c_source.html#l00098">98</a> of file <a class="el" href="uart0_8c_source.html">uart0.c</a>.</p>
-
-<p>Referenced by <a class="el" href="uart0_8c_source.html#l00142">ISR()</a>.</p>
+<p>Referenced by <a class="el" href="niboCom_8c_source.html#l00033">niboCom_init()</a>.</p>
 
 </div>
 </div>
@@ -347,7 +286,7 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:41 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

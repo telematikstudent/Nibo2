@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: src/nds3/ndsScan.c File Reference</title>
+<title>Nummer2lebt(Martini)!: src/nds3/ndsScan.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -23,16 +23,27 @@
   </div>
 </div>
 <div class="contents">
-<h1>src/nds3/ndsScan.c File Reference</h1><code>#include &quot;<a class="el" href="ndsScan_8h_source.html">ndsScan.h</a>&quot;</code><br/>
+<h1>src/nds3/ndsScan.c File Reference</h1>
+<p>Headerfile: library for the NDS3 Module.  
+<a href="#_details">More...</a></p>
+<code>#include &quot;<a class="el" href="ndsScan_8h_source.html">ndsScan.h</a>&quot;</code><br/>
 
 <p><a href="ndsScan_8c_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">uint8_t *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ndsScan_8c.html#a63c81ee3bb4ae4c79e2d8fe626398b9a">ndsScan</a> (uint8_t degrees)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ndsScan_8c.html#ab05da9f35d22df0f5b1f5d5a289278da">ndsScan</a> (uint8_t degree)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">scans the surrounding of the nibo with the nds3  <a href="#ab05da9f35d22df0f5b1f5d5a289278da"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="ndsScan_8c.html#a26da878dab6bb25af115443ce0b654b2">ndsScan_init</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">initialize nds3 module  <a href="#a26da878dab6bb25af115443ce0b654b2"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Headerfile: library for the NDS3 Module. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Christian Witte </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>Version 0.1 </dd></dl>
+
+<p>Definition in file <a class="el" href="ndsScan_8c_source.html">ndsScan.c</a>.</p>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="a63c81ee3bb4ae4c79e2d8fe626398b9a"></a><!-- doxytag: member="ndsScan.c::ndsScan" ref="a63c81ee3bb4ae4c79e2d8fe626398b9a" args="(uint8_t degrees)" -->
+<a class="anchor" id="ab05da9f35d22df0f5b1f5d5a289278da"></a><!-- doxytag: member="ndsScan.c::ndsScan" ref="ab05da9f35d22df0f5b1f5d5a289278da" args="(uint8_t degree)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -40,29 +51,26 @@
           <td class="memname">uint8_t* ndsScan </td>
           <td>(</td>
           <td class="paramtype">uint8_t&nbsp;</td>
-          <td class="paramname"> <em>degrees</em></td>
+          <td class="paramname"> <em>degree</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>param ndsMovement --&gt; winkel der pro zyklus gefahren wird</p>
-<p>return Beispiel</p>
-<p>000 &lt;- alles frei 101 &lt;- nur geradezu frei This fuctions returns the distance for the selected deegres </p>
 
-<p>Definition at line <a class="el" href="ndsScan_8c_source.html#l00017">17</a> of file <a class="el" href="ndsScan_8c_source.html">ndsScan.c</a>.</p>
+<p>scans the surrounding of the nibo with the nds3 </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>degree</em>&nbsp;</td><td>the angle resolution of the nds3 scan, defines the number of values returned -&gt; (180/degree)+1 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the nds measurement </dd></dl>
 
-<p>References <a class="el" href="ndsScan_8c_source.html#l00042">ndsScan_init()</a>.</p>
+<p>Definition at line <a class="el" href="ndsScan_8c_source.html#l00016">16</a> of file <a class="el" href="ndsScan_8c_source.html">ndsScan.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="ndsScan_8c_a63c81ee3bb4ae4c79e2d8fe626398b9a_cgraph.png" border="0" usemap="#ndsScan_8c_a63c81ee3bb4ae4c79e2d8fe626398b9a_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -81,14 +89,16 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="ndsScan_8c_source.html#l00042">42</a> of file <a class="el" href="ndsScan_8c_source.html">ndsScan.c</a>.</p>
+<p>initialize nds3 module </p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00037">initBot()</a>, and <a class="el" href="ndsScan_8c_source.html#l00017">ndsScan()</a>.</p>
+<p>Definition at line <a class="el" href="ndsScan_8c_source.html#l00044">44</a> of file <a class="el" href="ndsScan_8c_source.html">ndsScan.c</a>.</p>
+
+<p>Referenced by <a class="el" href="main_8c_source.html#l00045">initBot()</a>.</p>
 
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:41 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

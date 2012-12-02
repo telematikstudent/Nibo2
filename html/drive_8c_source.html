@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: src/drive/drive.c Source File</title>
+<title>Nummer2lebt(Martini)!: src/drive/drive.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -22,120 +22,116 @@
     </ul>
   </div>
 <h1>src/drive/drive.c</h1><a href="drive_8c.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
-<a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="drive_8h.html">drive.h</a>&quot;</span>
-<a name="l00012"></a>00012 
-<a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="drive_8h.html#aa2d373458dccc680c0bd9d0da32f09b8">00014</a> uint8_t <a class="code" href="drive_8c.html#aa2d373458dccc680c0bd9d0da32f09b8">drive</a>(uint8_t speed){
-<a name="l00015"></a>00015         uint8_t out = <a class="code" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free</a>;
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017         copro_update();
-<a name="l00018"></a>00018         copro_resetOdometry(0, 0);
-<a name="l00019"></a>00019 
-<a name="l00020"></a>00020         <span class="keywordflow">if</span>(<a class="code" href="drive_8c.html#af8ce29030de77bc0872608bdb2bc2272">drive_isFrontFree</a>()){
-<a name="l00021"></a>00021                 copro_setSpeed(speed,speed);
-<a name="l00022"></a>00022         }<span class="keywordflow">else</span>{
-<a name="l00023"></a>00023                 copro_stop();
-<a name="l00024"></a>00024                 out = <a class="code" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>;
-<a name="l00025"></a>00025         }
-<a name="l00026"></a>00026         delay(100);
-<a name="l00027"></a>00027         <a class="code" href="drive_8c.html#a1b3cd7e81785fc525af7a91c2eea925b">drive_sendTicks</a>();
-<a name="l00028"></a>00028         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4">drive_sendIRDistance</a>(0);
-<a name="l00029"></a>00029         <span class="keywordflow">return</span> out;
-<a name="l00030"></a>00030 }
-<a name="l00031"></a>00031 
-<a name="l00032"></a><a class="code" href="drive_8h.html#abc9a4479c1bc08bdc1457d9de54657cd">00032</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#abc9a4479c1bc08bdc1457d9de54657cd">drive_turn_left</a>(){
-<a name="l00033"></a>00033         copro_setTargetRel(-27, 27, 10);
-<a name="l00034"></a>00034         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#a0274c174b0f859599bb59ac885375196">niboCom_cmd_nibo_left</a>);
-<a name="l00035"></a>00035         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4">drive_sendIRDistance</a>(2000);
-<a name="l00036"></a>00036 }
-<a name="l00037"></a>00037 
-<a name="l00038"></a><a class="code" href="drive_8h.html#ae4a21ae95d8ca66c900db09f1f835361">00038</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#ae4a21ae95d8ca66c900db09f1f835361">drive_turn_halfLeft</a>(){
-<a name="l00039"></a>00039         copro_setTargetRel(-13, 13, 10);
-<a name="l00040"></a>00040         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#a73bf7db841a13000a3e574ebf690798f">niboCom_cmd_nibo_halfLeft</a>);
-<a name="l00041"></a>00041         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4">drive_sendIRDistance</a>(2000);
-<a name="l00042"></a>00042 }
-<a name="l00043"></a>00043 
-<a name="l00044"></a><a class="code" href="drive_8h.html#a15d2f4079089eb83f1784c20e35bdd34">00044</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a15d2f4079089eb83f1784c20e35bdd34">drive_turn_right</a>(){
-<a name="l00045"></a>00045         copro_setTargetRel(27, -27, 10);
-<a name="l00046"></a>00046         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#aaa4427da9145c4079ad7c935055cf2fd">niboCom_cmd_nibo_right</a>);
-<a name="l00047"></a>00047         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4">drive_sendIRDistance</a>(2000);
-<a name="l00048"></a>00048 }
-<a name="l00049"></a>00049 
-<a name="l00050"></a><a class="code" href="drive_8h.html#a394406132a355b7619d7388dfb701d0b">00050</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a394406132a355b7619d7388dfb701d0b">drive_turn_halfRight</a>(){
-<a name="l00051"></a>00051         copro_setTargetRel(13, -13, 10);
-<a name="l00052"></a>00052         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#ab3e21c1773efa9984822c86f5ac3b4b0">niboCom_cmd_nibo_halfRight</a>);
-<a name="l00053"></a>00053         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4">drive_sendIRDistance</a>(2000);
-<a name="l00054"></a>00054 }
-<a name="l00055"></a>00055 
-<a name="l00056"></a><a class="code" href="drive_8h.html#a8611e0fce2d7766f48b8f0e2df18458a">00056</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a8611e0fce2d7766f48b8f0e2df18458a">drive_turn_around</a>(){
-<a name="l00057"></a>00057         copro_setTargetRel(53, -53, 10);
-<a name="l00058"></a>00058         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#a982aacc0b1b590c39f3d0794ecd75345">niboCom_cmd_nibo_turn</a>);
-<a name="l00059"></a>00059         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4">drive_sendIRDistance</a>(4000);
-<a name="l00060"></a>00060 }
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063 
-<a name="l00064"></a><a class="code" href="drive_8h.html#a7966327d08d3514686f307c30cdd0514">00064</a> uint8_t <a class="code" href="drive_8c.html#a7966327d08d3514686f307c30cdd0514">drive_getFreePath</a>(){
+<a name="l00008"></a>00008 <span class="preprocessor">#include &quot;<a class="code" href="drive_8h.html" title="Headerfile: library for nibo movement.">drive.h</a>&quot;</span>
+<a name="l00009"></a>00009 
+<a name="l00015"></a><a class="code" href="drive_8h.html#aa2d373458dccc680c0bd9d0da32f09b8">00015</a> uint8_t <a class="code" href="drive_8c.html#aa2d373458dccc680c0bd9d0da32f09b8" title="moves the nibo forwards if no obstacle blocks the path">drive</a>(uint8_t speed){
+<a name="l00016"></a>00016         uint8_t out = <a class="code" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free</a>;
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018         copro_update();
+<a name="l00019"></a>00019         copro_resetOdometry(0, 0);
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021         <span class="keywordflow">if</span>(<a class="code" href="drive_8c.html#af8ce29030de77bc0872608bdb2bc2272" title="checks wheter the path in front of the nibo is blocked or not">drive_isFrontFree</a>()){
+<a name="l00022"></a>00022                 copro_setSpeed(speed,speed);
+<a name="l00023"></a>00023         }<span class="keywordflow">else</span>{
+<a name="l00024"></a>00024                 copro_stop();
+<a name="l00025"></a>00025                 out = <a class="code" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>;
+<a name="l00026"></a>00026         }
+<a name="l00027"></a>00027         <span class="comment">//transmit the moved distance and the ir sensor values</span>
+<a name="l00028"></a>00028         delay(100);
+<a name="l00029"></a>00029         <a class="code" href="drive_8c.html#a1b3cd7e81785fc525af7a91c2eea925b" title="sends the moved distance of nibo via xbee">drive_sendTicks</a>();
+<a name="l00030"></a>00030         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4" title="sends the IR-sensor values via xbee">drive_sendIRDistance</a>(0);
+<a name="l00031"></a>00031         <span class="keywordflow">return</span> out;
+<a name="l00032"></a>00032 }
+<a name="l00033"></a>00033 
+<a name="l00039"></a><a class="code" href="drive_8h.html#a7966327d08d3514686f307c30cdd0514">00039</a> uint8_t <a class="code" href="drive_8c.html#a7966327d08d3514686f307c30cdd0514" title="returns a non-blocked direction for the nibo">drive_getFreePath</a>(){
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         copro_update();
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043         <span class="keywordflow">if</span>(<a class="code" href="drive_8c.html#af8ce29030de77bc0872608bdb2bc2272" title="checks wheter the path in front of the nibo is blocked or not">drive_isFrontFree</a>()){
+<a name="l00044"></a>00044                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free</a>;
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="drive_8c.html#a1749c127ee781d52fe5832952f215dc9" title="checks wheter the path right of the nibo is blocked or not">drive_isRightFree</a>()){
+<a name="l00047"></a>00047                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#aee0a2b2736113b0e7991921088b98d1e">drive_right_free</a>;
+<a name="l00048"></a>00048         }
+<a name="l00049"></a>00049         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="drive_8c.html#a4a6c2c2932d4eaa077a084804a8003f0" title="checks wheter the path left of the nibo is blocked or not">drive_isLeftFree</a>()){
+<a name="l00050"></a>00050                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a470945dc5c2e6183247f956dfcbf48fe">drive_left_free</a>;
+<a name="l00051"></a>00051         }
+<a name="l00052"></a>00052         <span class="keywordflow">else</span>{
+<a name="l00053"></a>00053                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a1a519faed91646b319b10d8a2ed176b8">drive_all_blocked</a>;
+<a name="l00054"></a>00054         }
+<a name="l00055"></a>00055 }
+<a name="l00056"></a>00056 
+<a name="l00060"></a><a class="code" href="drive_8h.html#abc9a4479c1bc08bdc1457d9de54657cd">00060</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#abc9a4479c1bc08bdc1457d9de54657cd" title="turns the nibo 90 degree to the left">drive_turn_left</a>(){
+<a name="l00061"></a>00061         copro_setTargetRel(-27, 27, 10);
+<a name="l00062"></a>00062         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c" title="sends a DirectionChange packet via xbee">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#a0274c174b0f859599bb59ac885375196">niboCom_cmd_nibo_left</a>);
+<a name="l00063"></a>00063         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4" title="sends the IR-sensor values via xbee">drive_sendIRDistance</a>(2000);
+<a name="l00064"></a>00064 }
 <a name="l00065"></a>00065 
-<a name="l00066"></a>00066         copro_update();
-<a name="l00067"></a>00067 
-<a name="l00068"></a>00068         <span class="keywordflow">if</span>(<a class="code" href="drive_8c.html#af8ce29030de77bc0872608bdb2bc2272">drive_isFrontFree</a>()){
-<a name="l00069"></a>00069                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free</a>;
-<a name="l00070"></a>00070         }
-<a name="l00071"></a>00071         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="drive_8c.html#a1749c127ee781d52fe5832952f215dc9">drive_isRightFree</a>()){
-<a name="l00072"></a>00072                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#aee0a2b2736113b0e7991921088b98d1e">drive_right_free</a>;
-<a name="l00073"></a>00073         }
-<a name="l00074"></a>00074         <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="drive_8c.html#a4a6c2c2932d4eaa077a084804a8003f0">drive_isLeftFree</a>()){
-<a name="l00075"></a>00075                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a470945dc5c2e6183247f956dfcbf48fe">drive_left_free</a>;
-<a name="l00076"></a>00076         }
-<a name="l00077"></a>00077         <span class="keywordflow">else</span>{
-<a name="l00078"></a>00078                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a1a519faed91646b319b10d8a2ed176b8">drive_all_blocked</a>;
-<a name="l00079"></a>00079         }
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081 }
-<a name="l00082"></a>00082 
+<a name="l00069"></a><a class="code" href="drive_8h.html#ae4a21ae95d8ca66c900db09f1f835361">00069</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#ae4a21ae95d8ca66c900db09f1f835361" title="turns the nibo 45 degree to the left">drive_turn_halfLeft</a>(){
+<a name="l00070"></a>00070         copro_setTargetRel(-13, 13, 10);
+<a name="l00071"></a>00071         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c" title="sends a DirectionChange packet via xbee">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#a73bf7db841a13000a3e574ebf690798f">niboCom_cmd_nibo_halfLeft</a>);
+<a name="l00072"></a>00072         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4" title="sends the IR-sensor values via xbee">drive_sendIRDistance</a>(2000);
+<a name="l00073"></a>00073 }
+<a name="l00074"></a>00074 
+<a name="l00078"></a><a class="code" href="drive_8h.html#a15d2f4079089eb83f1784c20e35bdd34">00078</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a15d2f4079089eb83f1784c20e35bdd34" title="turns the nibo 90 degree to the right">drive_turn_right</a>(){
+<a name="l00079"></a>00079         copro_setTargetRel(27, -27, 10);
+<a name="l00080"></a>00080         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c" title="sends a DirectionChange packet via xbee">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#aaa4427da9145c4079ad7c935055cf2fd">niboCom_cmd_nibo_right</a>);
+<a name="l00081"></a>00081         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4" title="sends the IR-sensor values via xbee">drive_sendIRDistance</a>(2000);
+<a name="l00082"></a>00082 }
 <a name="l00083"></a>00083 
-<a name="l00084"></a><a class="code" href="drive_8h.html#af8ce29030de77bc0872608bdb2bc2272">00084</a> uint8_t <a class="code" href="drive_8c.html#af8ce29030de77bc0872608bdb2bc2272">drive_isFrontFree</a>(){
-<a name="l00085"></a>00085         <span class="keywordflow">if</span> (copro_distance[1]/256 &lt; <a class="code" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">irAbstand</a> &amp;&amp;
-<a name="l00086"></a>00086                 copro_distance[2]/256 &lt; <a class="code" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">irAbstand</a> &amp;&amp;
-<a name="l00087"></a>00087                 copro_distance[3]/256 &lt; <a class="code" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">irAbstand</a>){
-<a name="l00088"></a>00088                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free</a>;
-<a name="l00089"></a>00089         }
-<a name="l00090"></a>00090         <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>;
+<a name="l00087"></a><a class="code" href="drive_8h.html#a394406132a355b7619d7388dfb701d0b">00087</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a394406132a355b7619d7388dfb701d0b" title="turns the nibo 45 degree to the right">drive_turn_halfRight</a>(){
+<a name="l00088"></a>00088         copro_setTargetRel(13, -13, 10);
+<a name="l00089"></a>00089         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c" title="sends a DirectionChange packet via xbee">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#ab3e21c1773efa9984822c86f5ac3b4b0">niboCom_cmd_nibo_halfRight</a>);
+<a name="l00090"></a>00090         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4" title="sends the IR-sensor values via xbee">drive_sendIRDistance</a>(2000);
 <a name="l00091"></a>00091 }
 <a name="l00092"></a>00092 
-<a name="l00093"></a><a class="code" href="drive_8h.html#a1749c127ee781d52fe5832952f215dc9">00093</a> uint8_t <a class="code" href="drive_8c.html#a1749c127ee781d52fe5832952f215dc9">drive_isRightFree</a>(){
-<a name="l00094"></a>00094         <span class="keywordflow">if</span> (copro_distance[0] / 256 &lt; <a class="code" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">irAbstand</a> &amp;&amp; copro_distance[1] / 256 &lt; <a class="code" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">irAbstand</a>){
-<a name="l00095"></a>00095                                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#aee0a2b2736113b0e7991921088b98d1e">drive_right_free</a>;
-<a name="l00096"></a>00096         }
-<a name="l00097"></a>00097         <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>;
-<a name="l00098"></a>00098 }
-<a name="l00099"></a>00099 
-<a name="l00100"></a><a class="code" href="drive_8h.html#a4a6c2c2932d4eaa077a084804a8003f0">00100</a> uint8_t <a class="code" href="drive_8c.html#a4a6c2c2932d4eaa077a084804a8003f0">drive_isLeftFree</a>(){
-<a name="l00101"></a>00101         <span class="keywordflow">if</span> (copro_distance[4] / 256 &lt; <a class="code" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">irAbstand</a> &amp;&amp; copro_distance[3] / 256 &lt; <a class="code" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">irAbstand</a>){
-<a name="l00102"></a>00102                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a470945dc5c2e6183247f956dfcbf48fe">drive_left_free</a>;
-<a name="l00103"></a>00103         }
-<a name="l00104"></a>00104         <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>;
-<a name="l00105"></a>00105 }
-<a name="l00106"></a>00106 
-<a name="l00107"></a><a class="code" href="drive_8h.html#a1b3cd7e81785fc525af7a91c2eea925b">00107</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a1b3cd7e81785fc525af7a91c2eea925b">drive_sendTicks</a>(){
-<a name="l00108"></a>00108         copro_update();
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110         <span class="keywordflow">if</span>(copro_ticks_l &gt; 0){
-<a name="l00111"></a>00111                 <a class="code" href="niboCom_8c.html#a436a5c45d09aa907f0592f30f6ba340c">niboCom_putDistance</a>(copro_ticks_l);
-<a name="l00112"></a>00112         }
-<a name="l00113"></a>00113         copro_resetOdometry(0, 0);
-<a name="l00114"></a>00114 }
-<a name="l00115"></a>00115 
-<a name="l00116"></a><a class="code" href="drive_8h.html#a4cebc9c44796a4447f0b4a46f113d554">00116</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4">drive_sendIRDistance</a>(<span class="keywordtype">int</span> ms){
-<a name="l00117"></a>00117         delay(ms);
-<a name="l00118"></a>00118         copro_resetOdometry(0, 0);
-<a name="l00119"></a>00119         copro_update();
-<a name="l00120"></a>00120         <a class="code" href="niboCom_8c.html#a7b4a49fd74ddce73f2d21c8237d35f82">niboCom_putIRDistance</a>(copro_distance);
-<a name="l00121"></a>00121 }
-<a name="l00122"></a>00122 
+<a name="l00096"></a><a class="code" href="drive_8h.html#a8611e0fce2d7766f48b8f0e2df18458a">00096</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a8611e0fce2d7766f48b8f0e2df18458a" title="turns the nibo 180 degree to the right">drive_turn_around</a>(){
+<a name="l00097"></a>00097         copro_setTargetRel(53, -53, 10);
+<a name="l00098"></a>00098         <a class="code" href="niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c" title="sends a DirectionChange packet via xbee">niboCom_putDircetionChange</a>(<a class="code" href="niboCom_8h.html#a982aacc0b1b590c39f3d0794ecd75345">niboCom_cmd_nibo_turn</a>);
+<a name="l00099"></a>00099         <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4" title="sends the IR-sensor values via xbee">drive_sendIRDistance</a>(4000);
+<a name="l00100"></a>00100 }
+<a name="l00101"></a>00101 
+<a name="l00106"></a><a class="code" href="drive_8h.html#af8ce29030de77bc0872608bdb2bc2272">00106</a> uint8_t <a class="code" href="drive_8c.html#af8ce29030de77bc0872608bdb2bc2272" title="checks wheter the path in front of the nibo is blocked or not">drive_isFrontFree</a>(){
+<a name="l00107"></a>00107         <span class="keywordflow">if</span> (copro_distance[1]/256 &lt; <a class="code" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">IRDistance</a> &amp;&amp;
+<a name="l00108"></a>00108                 copro_distance[2]/256 &lt; <a class="code" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">IRDistance</a> &amp;&amp;
+<a name="l00109"></a>00109                 copro_distance[3]/256 &lt; <a class="code" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">IRDistance</a>){
+<a name="l00110"></a>00110                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free</a>;
+<a name="l00111"></a>00111         }
+<a name="l00112"></a>00112         <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>;
+<a name="l00113"></a>00113 }
+<a name="l00114"></a>00114 
+<a name="l00119"></a><a class="code" href="drive_8h.html#a1749c127ee781d52fe5832952f215dc9">00119</a> uint8_t <a class="code" href="drive_8c.html#a1749c127ee781d52fe5832952f215dc9" title="checks wheter the path right of the nibo is blocked or not">drive_isRightFree</a>(){
+<a name="l00120"></a>00120         <span class="keywordflow">if</span> (copro_distance[0] / 256 &lt; <a class="code" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">IRDistance</a> &amp;&amp; copro_distance[1] / 256 &lt; <a class="code" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">IRDistance</a>){
+<a name="l00121"></a>00121                                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#aee0a2b2736113b0e7991921088b98d1e">drive_right_free</a>;
+<a name="l00122"></a>00122         }
+<a name="l00123"></a>00123         <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>;
+<a name="l00124"></a>00124 }
+<a name="l00125"></a>00125 
+<a name="l00130"></a><a class="code" href="drive_8h.html#a4a6c2c2932d4eaa077a084804a8003f0">00130</a> uint8_t <a class="code" href="drive_8c.html#a4a6c2c2932d4eaa077a084804a8003f0" title="checks wheter the path left of the nibo is blocked or not">drive_isLeftFree</a>(){
+<a name="l00131"></a>00131         <span class="keywordflow">if</span> (copro_distance[4] / 256 &lt; <a class="code" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">IRDistance</a> &amp;&amp; copro_distance[3] / 256 &lt; <a class="code" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">IRDistance</a>){
+<a name="l00132"></a>00132                 <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a470945dc5c2e6183247f956dfcbf48fe">drive_left_free</a>;
+<a name="l00133"></a>00133         }
+<a name="l00134"></a>00134         <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>;
+<a name="l00135"></a>00135 }
+<a name="l00136"></a>00136 
+<a name="l00140"></a><a class="code" href="drive_8h.html#a1b3cd7e81785fc525af7a91c2eea925b">00140</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a1b3cd7e81785fc525af7a91c2eea925b" title="sends the moved distance of nibo via xbee">drive_sendTicks</a>(){
+<a name="l00141"></a>00141         copro_update();
+<a name="l00142"></a>00142 
+<a name="l00143"></a>00143         <span class="keywordflow">if</span>(copro_ticks_l &gt; 0){
+<a name="l00144"></a>00144                 <a class="code" href="niboCom_8c.html#a436a5c45d09aa907f0592f30f6ba340c" title="sends a Distance packet via xbee">niboCom_putDistance</a>(copro_ticks_l);
+<a name="l00145"></a>00145         }
+<a name="l00146"></a>00146         copro_resetOdometry(0, 0);
+<a name="l00147"></a>00147 }
+<a name="l00148"></a>00148 
+<a name="l00153"></a><a class="code" href="drive_8h.html#a4cebc9c44796a4447f0b4a46f113d554">00153</a> <span class="keywordtype">void</span> <a class="code" href="drive_8c.html#a14dd377df8fc35f321b94470d994d1d4" title="sends the IR-sensor values via xbee">drive_sendIRDistance</a>(<span class="keywordtype">int</span> ms){
+<a name="l00154"></a>00154         delay(ms);
+<a name="l00155"></a>00155         copro_resetOdometry(0, 0);
+<a name="l00156"></a>00156         copro_update();
+<a name="l00157"></a>00157         <a class="code" href="niboCom_8c.html#a7b4a49fd74ddce73f2d21c8237d35f82" title="sends a IRDistance packet via xbee">niboCom_putIRDistance</a>(copro_distance);
+<a name="l00158"></a>00158 }
+<a name="l00159"></a>00159 
 </pre></div></div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:40 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

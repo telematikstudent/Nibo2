@@ -1,0 +1,15 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="drive_sendTicks",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="niboCom_putDistance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#a436a5c45d09aa907f0592f30f6ba340c",tooltip="sends a Distance packet via xbee"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="niboCom_putPacket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#a2859c4990c06d21ae58d0a88d3b28467",tooltip="sends a niboCom packet via xbee"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="niboCom_putchar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#ae1e5321f17ac250714265f5007c2c866",tooltip="sends a char via xbee. Blocking function."];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="uart0_putchar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uart0_8c.html#abbeecbb2f51e542fdb5f89a26d3449da"];
+}

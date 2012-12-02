@@ -1,0 +1,13 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="drive_getFreePath",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="drive_isFrontFree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8c.html#af8ce29030de77bc0872608bdb2bc2272",tooltip="checks wheter the path in front of the nibo is blocked or not"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="drive_isLeftFree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8c.html#a4a6c2c2932d4eaa077a084804a8003f0",tooltip="checks wheter the path left of the nibo is blocked or not"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="drive_isRightFree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8c.html#a1749c127ee781d52fe5832952f215dc9",tooltip="checks wheter the path right of the nibo is blocked or not"];
+}

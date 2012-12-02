@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: src/drive/drive.h File Reference</title>
+<title>Nummer2lebt(Martini)!: src/drive/drive.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -23,14 +23,14 @@
   </div>
 </div>
 <div class="contents">
-<h1>src/drive/drive.h File Reference</h1><code>#include &lt;nibo/niboconfig.h&gt;</code><br/>
+<h1>src/drive/drive.h File Reference</h1>
+<p>Headerfile: library for nibo movement.  
+<a href="#_details">More...</a></p>
+<code>#include &lt;nibo/niboconfig.h&gt;</code><br/>
 <code>#include &lt;nibo/iodefs.h&gt;</code><br/>
 <code>#include &lt;nibo/bot.h&gt;</code><br/>
 <code>#include &lt;nibo/copro.h&gt;</code><br/>
 <code>#include &lt;nibo/spi.h&gt;</code><br/>
-<code>#include &lt;avr/interrupt.h&gt;</code><br/>
-<code>#include &lt;stdbool.h&gt;</code><br/>
-<code>#include &lt;nibo/leds.h&gt;</code><br/>
 <code>#include &lt;nibo/delay.h&gt;</code><br/>
 <code>#include &quot;../xbee/niboCom.h&quot;</code><br/>
 
@@ -39,39 +39,57 @@
 <tr><td colspan="2"><h2>Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked</a>&nbsp;&nbsp;&nbsp;0</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free</a>&nbsp;&nbsp;&nbsp;1</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#aee0a2b2736113b0e7991921088b98d1e">drive_right_free</a>&nbsp;&nbsp;&nbsp;3</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a470945dc5c2e6183247f956dfcbf48fe">drive_left_free</a>&nbsp;&nbsp;&nbsp;4</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a1a519faed91646b319b10d8a2ed176b8">drive_all_blocked</a>&nbsp;&nbsp;&nbsp;5</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#ad155d8f3f621943f608ff49aa67ccbf7">irAbstand</a>&nbsp;&nbsp;&nbsp;70</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#aee0a2b2736113b0e7991921088b98d1e">drive_right_free</a>&nbsp;&nbsp;&nbsp;2</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a470945dc5c2e6183247f956dfcbf48fe">drive_left_free</a>&nbsp;&nbsp;&nbsp;3</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a1a519faed91646b319b10d8a2ed176b8">drive_all_blocked</a>&nbsp;&nbsp;&nbsp;4</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a59e18508c50b776e736b44d455f0ab73">IRDistance</a>&nbsp;&nbsp;&nbsp;70</td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#aa2d373458dccc680c0bd9d0da32f09b8">drive</a> (uint8_t speed)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">moves the nibo forwards if no obstacle blocks the path  <a href="#aa2d373458dccc680c0bd9d0da32f09b8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a7966327d08d3514686f307c30cdd0514">drive_getFreePath</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a15d2f4079089eb83f1784c20e35bdd34">drive_turn_right</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">returns a non-blocked direction for the nibo  <a href="#a7966327d08d3514686f307c30cdd0514"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#abc9a4479c1bc08bdc1457d9de54657cd">drive_turn_left</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a394406132a355b7619d7388dfb701d0b">drive_turn_halfRight</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">turns the nibo 90 degree to the left  <a href="#abc9a4479c1bc08bdc1457d9de54657cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#ae4a21ae95d8ca66c900db09f1f835361">drive_turn_halfLeft</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">turns the nibo 45 degree to the left  <a href="#ae4a21ae95d8ca66c900db09f1f835361"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a15d2f4079089eb83f1784c20e35bdd34">drive_turn_right</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">turns the nibo 90 degree to the right  <a href="#a15d2f4079089eb83f1784c20e35bdd34"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a394406132a355b7619d7388dfb701d0b">drive_turn_halfRight</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">turns the nibo 45 degree to the right  <a href="#a394406132a355b7619d7388dfb701d0b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a8611e0fce2d7766f48b8f0e2df18458a">drive_turn_around</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">turns the nibo 180 degree to the right  <a href="#a8611e0fce2d7766f48b8f0e2df18458a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#af8ce29030de77bc0872608bdb2bc2272">drive_isFrontFree</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">checks wheter the path in front of the nibo is blocked or not  <a href="#af8ce29030de77bc0872608bdb2bc2272"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a1749c127ee781d52fe5832952f215dc9">drive_isRightFree</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">checks wheter the path right of the nibo is blocked or not  <a href="#a1749c127ee781d52fe5832952f215dc9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a4a6c2c2932d4eaa077a084804a8003f0">drive_isLeftFree</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">checks wheter the path left of the nibo is blocked or not  <a href="#a4a6c2c2932d4eaa077a084804a8003f0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a1b3cd7e81785fc525af7a91c2eea925b">drive_sendTicks</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends the moved distance of nibo via xbee  <a href="#a1b3cd7e81785fc525af7a91c2eea925b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="drive_8h.html#a4cebc9c44796a4447f0b4a46f113d554">drive_sendIRDistance</a> (int delay)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">sends the IR-sensor values via xbee  <a href="#a4cebc9c44796a4447f0b4a46f113d554"></a><br/></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Headerfile: library for nibo movement. </p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Phillip Kopprasch, Christian Witte </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>Version 0.1 </dd></dl>
+
+<p>Definition in file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="a1a519faed91646b319b10d8a2ed176b8"></a><!-- doxytag: member="drive.h::drive_all_blocked" ref="a1a519faed91646b319b10d8a2ed176b8" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define drive_all_blocked&nbsp;&nbsp;&nbsp;5</td>
+          <td class="memname">#define drive_all_blocked&nbsp;&nbsp;&nbsp;4</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8h_source.html#l00035">35</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
+<p>Definition at line <a class="el" href="drive_8h_source.html#l00044">44</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, and <a class="el" href="drive_8c_source.html#l00064">drive_getFreePath()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="drive_8c_source.html#l00039">drive_getFreePath()</a>.</p>
 
 </div>
 </div>
@@ -85,10 +103,11 @@
       </table>
 </div>
 <div class="memdoc">
+<p>includes nibo Martini defines </p>
 
-<p>Definition at line <a class="el" href="drive_8h_source.html#l00027">27</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
+<p>Definition at line <a class="el" href="drive_8h_source.html#l00036">36</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00014">drive()</a>, <a class="el" href="drive_8c_source.html#l00084">drive_isFrontFree()</a>, <a class="el" href="drive_8c_source.html#l00100">drive_isLeftFree()</a>, and <a class="el" href="drive_8c_source.html#l00093">drive_isRightFree()</a>.</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00015">drive()</a>, <a class="el" href="drive_8c_source.html#l00106">drive_isFrontFree()</a>, <a class="el" href="drive_8c_source.html#l00130">drive_isLeftFree()</a>, and <a class="el" href="drive_8c_source.html#l00119">drive_isRightFree()</a>.</p>
 
 </div>
 </div>
@@ -103,9 +122,9 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8h_source.html#l00029">29</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
+<p>Definition at line <a class="el" href="drive_8h_source.html#l00038">38</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00014">drive()</a>, <a class="el" href="drive_8c_source.html#l00064">drive_getFreePath()</a>, <a class="el" href="drive_8c_source.html#l00084">drive_isFrontFree()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00015">drive()</a>, <a class="el" href="drive_8c_source.html#l00039">drive_getFreePath()</a>, <a class="el" href="drive_8c_source.html#l00106">drive_isFrontFree()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -114,15 +133,15 @@
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define drive_left_free&nbsp;&nbsp;&nbsp;4</td>
+          <td class="memname">#define drive_left_free&nbsp;&nbsp;&nbsp;3</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8h_source.html#l00033">33</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
+<p>Definition at line <a class="el" href="drive_8h_source.html#l00042">42</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, <a class="el" href="drive_8c_source.html#l00064">drive_getFreePath()</a>, and <a class="el" href="drive_8c_source.html#l00100">drive_isLeftFree()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, <a class="el" href="drive_8c_source.html#l00039">drive_getFreePath()</a>, and <a class="el" href="drive_8c_source.html#l00130">drive_isLeftFree()</a>.</p>
 
 </div>
 </div>
@@ -131,32 +150,32 @@
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define drive_right_free&nbsp;&nbsp;&nbsp;3</td>
+          <td class="memname">#define drive_right_free&nbsp;&nbsp;&nbsp;2</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8h_source.html#l00031">31</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
+<p>Definition at line <a class="el" href="drive_8h_source.html#l00040">40</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, <a class="el" href="drive_8c_source.html#l00064">drive_getFreePath()</a>, and <a class="el" href="drive_8c_source.html#l00093">drive_isRightFree()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, <a class="el" href="drive_8c_source.html#l00039">drive_getFreePath()</a>, and <a class="el" href="drive_8c_source.html#l00119">drive_isRightFree()</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad155d8f3f621943f608ff49aa67ccbf7"></a><!-- doxytag: member="drive.h::irAbstand" ref="ad155d8f3f621943f608ff49aa67ccbf7" args="" -->
+<a class="anchor" id="a59e18508c50b776e736b44d455f0ab73"></a><!-- doxytag: member="drive.h::IRDistance" ref="a59e18508c50b776e736b44d455f0ab73" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define irAbstand&nbsp;&nbsp;&nbsp;70</td>
+          <td class="memname">#define IRDistance&nbsp;&nbsp;&nbsp;70</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8h_source.html#l00038">38</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
+<p>Definition at line <a class="el" href="drive_8h_source.html#l00047">47</a> of file <a class="el" href="drive_8h_source.html">drive.h</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00216">checkDistance()</a>, <a class="el" href="drive_8c_source.html#l00084">drive_isFrontFree()</a>, <a class="el" href="drive_8c_source.html#l00100">drive_isLeftFree()</a>, and <a class="el" href="drive_8c_source.html#l00093">drive_isRightFree()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00288">checkDistance()</a>, <a class="el" href="drive_8c_source.html#l00106">drive_isFrontFree()</a>, <a class="el" href="drive_8c_source.html#l00130">drive_isLeftFree()</a>, and <a class="el" href="drive_8c_source.html#l00119">drive_isRightFree()</a>.</p>
 
 </div>
 </div>
@@ -177,18 +196,20 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00014">14</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>moves the nibo forwards if no obstacle blocks the path </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>speed</em>&nbsp;</td><td>the speed the nibo moves in ticks </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free(1)</a> or <a class="el" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked(0)</a> if the path is blocked </dd></dl>
 
-<p>References <a class="el" href="drive_8h_source.html#l00027">drive_direction_blocked</a>, <a class="el" href="drive_8h_source.html#l00029">drive_front_free</a>, <a class="el" href="drive_8c_source.html#l00084">drive_isFrontFree()</a>, <a class="el" href="drive_8c_source.html#l00116">drive_sendIRDistance()</a>, and <a class="el" href="drive_8c_source.html#l00107">drive_sendTicks()</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00015">15</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="drive_8h_source.html#l00036">drive_direction_blocked</a>, <a class="el" href="drive_8h_source.html#l00038">drive_front_free</a>, <a class="el" href="drive_8c_source.html#l00106">drive_isFrontFree()</a>, <a class="el" href="drive_8c_source.html#l00153">drive_sendIRDistance()</a>, and <a class="el" href="drive_8c_source.html#l00140">drive_sendTicks()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_aa2d373458dccc680c0bd9d0da32f09b8_cgraph.png" border="0" usemap="#drive_8h_aa2d373458dccc680c0bd9d0da32f09b8_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -207,18 +228,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00064">64</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>returns a non-blocked direction for the nibo </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free(1)</a> or <a class="el" href="drive_8h.html#aee0a2b2736113b0e7991921088b98d1e">drive_right_free(2)</a> or <a class="el" href="drive_8h.html#a470945dc5c2e6183247f956dfcbf48fe">drive_left_free(3)</a> or drive_front_all_blocked(4). </dd></dl>
 
-<p>References <a class="el" href="drive_8h_source.html#l00035">drive_all_blocked</a>, <a class="el" href="drive_8h_source.html#l00029">drive_front_free</a>, <a class="el" href="drive_8c_source.html#l00084">drive_isFrontFree()</a>, <a class="el" href="drive_8c_source.html#l00100">drive_isLeftFree()</a>, <a class="el" href="drive_8c_source.html#l00093">drive_isRightFree()</a>, <a class="el" href="drive_8h_source.html#l00033">drive_left_free</a>, and <a class="el" href="drive_8h_source.html#l00031">drive_right_free</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00039">39</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>.</p>
+<p>References <a class="el" href="drive_8h_source.html#l00044">drive_all_blocked</a>, <a class="el" href="drive_8h_source.html#l00038">drive_front_free</a>, <a class="el" href="drive_8c_source.html#l00106">drive_isFrontFree()</a>, <a class="el" href="drive_8c_source.html#l00130">drive_isLeftFree()</a>, <a class="el" href="drive_8c_source.html#l00119">drive_isRightFree()</a>, <a class="el" href="drive_8h_source.html#l00042">drive_left_free</a>, and <a class="el" href="drive_8h_source.html#l00040">drive_right_free</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_a7966327d08d3514686f307c30cdd0514_cgraph.png" border="0" usemap="#drive_8h_a7966327d08d3514686f307c30cdd0514_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>.</p>
 
 </div>
 </div>
@@ -237,11 +254,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00084">84</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>checks wheter the path in front of the nibo is blocked or not </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="drive_8h.html#a59f54834f1c7c2f12e4a154e9cbe9a5b">drive_front_free(1)</a> or <a class="el" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked(0)</a> if path is blocked </dd></dl>
 
-<p>References <a class="el" href="drive_8h_source.html#l00027">drive_direction_blocked</a>, <a class="el" href="drive_8h_source.html#l00029">drive_front_free</a>, and <a class="el" href="drive_8h_source.html#l00038">irAbstand</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00106">106</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00014">drive()</a>, and <a class="el" href="drive_8c_source.html#l00064">drive_getFreePath()</a>.</p>
+<p>References <a class="el" href="drive_8h_source.html#l00036">drive_direction_blocked</a>, <a class="el" href="drive_8h_source.html#l00038">drive_front_free</a>, and <a class="el" href="drive_8h_source.html#l00047">IRDistance</a>.</p>
+
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00015">drive()</a>, and <a class="el" href="drive_8c_source.html#l00039">drive_getFreePath()</a>.</p>
 
 </div>
 </div>
@@ -260,11 +280,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00100">100</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>checks wheter the path left of the nibo is blocked or not </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="drive_8h.html#a470945dc5c2e6183247f956dfcbf48fe">drive_left_free(3)</a> or <a class="el" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked(0)</a> if path is blocked </dd></dl>
 
-<p>References <a class="el" href="drive_8h_source.html#l00027">drive_direction_blocked</a>, <a class="el" href="drive_8h_source.html#l00033">drive_left_free</a>, and <a class="el" href="drive_8h_source.html#l00038">irAbstand</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00130">130</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, and <a class="el" href="drive_8c_source.html#l00064">drive_getFreePath()</a>.</p>
+<p>References <a class="el" href="drive_8h_source.html#l00036">drive_direction_blocked</a>, <a class="el" href="drive_8h_source.html#l00042">drive_left_free</a>, and <a class="el" href="drive_8h_source.html#l00047">IRDistance</a>.</p>
+
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="drive_8c_source.html#l00039">drive_getFreePath()</a>.</p>
 
 </div>
 </div>
@@ -283,11 +306,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00093">93</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>checks wheter the path right of the nibo is blocked or not </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="drive_8h.html#aee0a2b2736113b0e7991921088b98d1e">drive_right_free(2)</a> or <a class="el" href="drive_8h.html#a8474b242677a2ee0cacd5905df1ed5c6">drive_direction_blocked(0)</a> if path is blocked </dd></dl>
 
-<p>References <a class="el" href="drive_8h_source.html#l00027">drive_direction_blocked</a>, <a class="el" href="drive_8h_source.html#l00031">drive_right_free</a>, and <a class="el" href="drive_8h_source.html#l00038">irAbstand</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00119">119</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, and <a class="el" href="drive_8c_source.html#l00064">drive_getFreePath()</a>.</p>
+<p>References <a class="el" href="drive_8h_source.html#l00036">drive_direction_blocked</a>, <a class="el" href="drive_8h_source.html#l00040">drive_right_free</a>, and <a class="el" href="drive_8h_source.html#l00047">IRDistance</a>.</p>
+
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="drive_8c_source.html#l00039">drive_getFreePath()</a>.</p>
 
 </div>
 </div>
@@ -299,7 +325,7 @@ Here is the call graph for this function:</div>
           <td class="memname">void drive_sendIRDistance </td>
           <td>(</td>
           <td class="paramtype">int&nbsp;</td>
-          <td class="paramname"> <em>delay</em></td>
+          <td class="paramname"> <em>ms</em></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
         </tr>
@@ -307,18 +333,19 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00116">116</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>sends the IR-sensor values via xbee </p>
+<dl><dt><b>Parameters:</b></dt><dd>
+  <table border="0" cellspacing="2" cellpadding="0">
+    <tr><td valign="top"></td><td valign="top"><em>ms</em>&nbsp;</td><td>delay before collection IR-sensor values </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>References <a class="el" href="niboCom_8c_source.html#l00065">niboCom_putIRDistance()</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00153">153</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00014">drive()</a>, <a class="el" href="drive_8c_source.html#l00056">drive_turn_around()</a>, <a class="el" href="drive_8c_source.html#l00038">drive_turn_halfLeft()</a>, <a class="el" href="drive_8c_source.html#l00050">drive_turn_halfRight()</a>, <a class="el" href="drive_8c_source.html#l00032">drive_turn_left()</a>, and <a class="el" href="drive_8c_source.html#l00044">drive_turn_right()</a>.</p>
+<p>References <a class="el" href="niboCom_8c_source.html#l00082">niboCom_putIRDistance()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_a4cebc9c44796a4447f0b4a46f113d554_cgraph.png" border="0" usemap="#drive_8h_a4cebc9c44796a4447f0b4a46f113d554_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00015">drive()</a>, <a class="el" href="drive_8c_source.html#l00096">drive_turn_around()</a>, <a class="el" href="drive_8c_source.html#l00069">drive_turn_halfLeft()</a>, <a class="el" href="drive_8c_source.html#l00087">drive_turn_halfRight()</a>, <a class="el" href="drive_8c_source.html#l00060">drive_turn_left()</a>, and <a class="el" href="drive_8c_source.html#l00078">drive_turn_right()</a>.</p>
 
 </div>
 </div>
@@ -337,18 +364,13 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00107">107</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>sends the moved distance of nibo via xbee </p>
 
-<p>References <a class="el" href="niboCom_8c_source.html#l00085">niboCom_putDistance()</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00140">140</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="drive_8c_source.html#l00014">drive()</a>.</p>
+<p>References <a class="el" href="niboCom_8c_source.html#l00114">niboCom_putDistance()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_a1b3cd7e81785fc525af7a91c2eea925b_cgraph.png" border="0" usemap="#drive_8h_a1b3cd7e81785fc525af7a91c2eea925b_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="drive_8c_source.html#l00015">drive()</a>.</p>
 
 </div>
 </div>
@@ -367,18 +389,13 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00056">56</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>turns the nibo 180 degree to the right </p>
 
-<p>References <a class="el" href="drive_8c_source.html#l00116">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00043">niboCom_cmd_nibo_turn</a>, and <a class="el" href="niboCom_8c_source.html#l00080">niboCom_putDircetionChange()</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00096">96</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="drive_8c_source.html#l00153">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00041">niboCom_cmd_nibo_turn</a>, and <a class="el" href="niboCom_8c_source.html#l00106">niboCom_putDircetionChange()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_a8611e0fce2d7766f48b8f0e2df18458a_cgraph.png" border="0" usemap="#drive_8h_a8611e0fce2d7766f48b8f0e2df18458a_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -397,18 +414,13 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00038">38</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>turns the nibo 45 degree to the left </p>
 
-<p>References <a class="el" href="drive_8c_source.html#l00116">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00044">niboCom_cmd_nibo_halfLeft</a>, and <a class="el" href="niboCom_8c_source.html#l00080">niboCom_putDircetionChange()</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00069">69</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="drive_8c_source.html#l00153">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00042">niboCom_cmd_nibo_halfLeft</a>, and <a class="el" href="niboCom_8c_source.html#l00106">niboCom_putDircetionChange()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_ae4a21ae95d8ca66c900db09f1f835361_cgraph.png" border="0" usemap="#drive_8h_ae4a21ae95d8ca66c900db09f1f835361_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -427,18 +439,13 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00050">50</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>turns the nibo 45 degree to the right </p>
 
-<p>References <a class="el" href="drive_8c_source.html#l00116">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00046">niboCom_cmd_nibo_halfRight</a>, and <a class="el" href="niboCom_8c_source.html#l00080">niboCom_putDircetionChange()</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00087">87</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="drive_8c_source.html#l00153">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00044">niboCom_cmd_nibo_halfRight</a>, and <a class="el" href="niboCom_8c_source.html#l00106">niboCom_putDircetionChange()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_a394406132a355b7619d7388dfb701d0b_cgraph.png" border="0" usemap="#drive_8h_a394406132a355b7619d7388dfb701d0b_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -457,18 +464,13 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00032">32</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>turns the nibo 90 degree to the left </p>
 
-<p>References <a class="el" href="drive_8c_source.html#l00116">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00045">niboCom_cmd_nibo_left</a>, and <a class="el" href="niboCom_8c_source.html#l00080">niboCom_putDircetionChange()</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00060">60</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="drive_8c_source.html#l00153">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00043">niboCom_cmd_nibo_left</a>, and <a class="el" href="niboCom_8c_source.html#l00106">niboCom_putDircetionChange()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_abc9a4479c1bc08bdc1457d9de54657cd_cgraph.png" border="0" usemap="#drive_8h_abc9a4479c1bc08bdc1457d9de54657cd_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -487,23 +489,18 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="drive_8c_source.html#l00044">44</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
+<p>turns the nibo 90 degree to the right </p>
 
-<p>References <a class="el" href="drive_8c_source.html#l00116">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00047">niboCom_cmd_nibo_right</a>, and <a class="el" href="niboCom_8c_source.html#l00080">niboCom_putDircetionChange()</a>.</p>
+<p>Definition at line <a class="el" href="drive_8c_source.html#l00078">78</a> of file <a class="el" href="drive_8c_source.html">drive.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="drive_8c_source.html#l00153">drive_sendIRDistance()</a>, <a class="el" href="niboCom_8h_source.html#l00045">niboCom_cmd_nibo_right</a>, and <a class="el" href="niboCom_8c_source.html#l00106">niboCom_putDircetionChange()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="drive_8h_a15d2f4079089eb83f1784c20e35bdd34_cgraph.png" border="0" usemap="#drive_8h_a15d2f4079089eb83f1784c20e35bdd34_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:41 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

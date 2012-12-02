@@ -1,0 +1,20 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="drive_turn_halfLeft",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="drive_sendIRDistance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$drive_8c.html#a14dd377df8fc35f321b94470d994d1d4",tooltip="sends the IR-sensor values via xbee"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="niboCom_putIRDistance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#a7b4a49fd74ddce73f2d21c8237d35f82",tooltip="sends a IRDistance packet via xbee"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="niboCom_putPacket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#a2859c4990c06d21ae58d0a88d3b28467",tooltip="sends a niboCom packet via xbee"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="niboCom_putchar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#ae1e5321f17ac250714265f5007c2c866",tooltip="sends a char via xbee. Blocking function."];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="uart0_putchar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uart0_8c.html#abbeecbb2f51e542fdb5f89a26d3449da"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="niboCom_putDircetionChange",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$niboCom_8c.html#ac2c2c2467adfe3e1a958f04227ebba6c",tooltip="sends a DirectionChange packet via xbee"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+}

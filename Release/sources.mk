@@ -22,9 +22,9 @@ S_UPPER_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 src/xbee \
+src/sound \
 src/nds3 \
 src \
-src/display/debug \
+src/drive \
 src/display \
-src/antrieb \
 

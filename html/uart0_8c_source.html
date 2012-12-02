@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: src/xbee/uart0.c Source File</title>
+<title>Nummer2lebt(Martini)!: src/xbee/uart0.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -61,7 +61,7 @@
 <a name="l00038"></a>00038 <span class="preprocessor">#include &lt;avr/interrupt.h&gt;</span>
 <a name="l00039"></a>00039 
 <a name="l00040"></a>00040 <span class="preprocessor">#include &quot;<a class="code" href="uart0_8h.html" title="Routinen zur Kommunikation über die serielle Schnittstelle.">uart0.h</a>&quot;</span>
-<a name="l00041"></a>00041 <span class="preprocessor">#include &quot;<a class="code" href="niboCom_8h.html">niboCom.h</a>&quot;</span>
+<a name="l00041"></a>00041 <span class="preprocessor">#include &quot;<a class="code" href="niboCom_8h.html" title="Headerfile: library for nibo2pc communication.">niboCom.h</a>&quot;</span>
 <a name="l00042"></a>00042 
 <a name="l00043"></a>00043 <span class="preprocessor">#ifdef __cplusplus</span>
 <a name="l00044"></a>00044 <span class="preprocessor"></span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {
@@ -118,7 +118,7 @@
 <a name="l00095"></a>00095 }
 <a name="l00096"></a>00096 
 <a name="l00097"></a>00097 
-<a name="l00098"></a><a class="code" href="uart0_8c.html#ad6756e5c40a4a4dc8bab9fff33a708ae">00098</a> <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code" href="uart0_8c.html#ad6756e5c40a4a4dc8bab9fff33a708ae">uart0_tx_getchar</a>() {
+<a name="l00098"></a>00098 <span class="keyword">static</span> <span class="keywordtype">char</span> uart0_tx_getchar() {
 <a name="l00099"></a>00099   uint8_t result = uart0_txbuf[uart0_txbuf_begin];
 <a name="l00100"></a>00100   <span class="keywordflow">if</span> (uart0_txbuf_end==UART0_TXBUF_SIZE) {
 <a name="l00101"></a>00101     uart0_txbuf_end=uart0_txbuf_begin;
@@ -131,7 +131,7 @@
 <a name="l00108"></a>00108 }
 <a name="l00109"></a>00109 
 <a name="l00110"></a>00110 
-<a name="l00111"></a><a class="code" href="uart0_8c.html#aeeed7d61fec0893066ee59e2958b18d9">00111</a> <span class="keyword">static</span> <span class="keywordtype">char</span> <a class="code" href="uart0_8c.html#aeeed7d61fec0893066ee59e2958b18d9">uart0_rx_putchar</a>(<span class="keywordtype">char</span> c) {
+<a name="l00111"></a>00111 <span class="keyword">static</span> <span class="keywordtype">char</span> uart0_rx_putchar(<span class="keywordtype">char</span> c) {
 <a name="l00112"></a>00112   uart0_rxbuf[uart0_rxbuf_end] = c;
 <a name="l00113"></a>00113   <span class="keywordflow">if</span> (++uart0_rxbuf_end&gt;=UART0_RXBUF_SIZE) {
 <a name="l00114"></a>00114     uart0_rxbuf_end=0;
@@ -153,18 +153,18 @@
 <a name="l00130"></a>00130 }
 <a name="l00131"></a>00131 
 <a name="l00132"></a>00132 
-<a name="l00133"></a><a class="code" href="uart0_8c.html#a084f0a9cf05b1877bd8a71a90dae7ff8">00133</a> <a class="code" href="main_8c.html#a7cfcbe42bd266750aeb6e5d71e5ea479" title="Timer2 interrupt.">ISR</a>(USART0_RX_vect) {
+<a name="l00133"></a><a class="code" href="uart0_8c.html#a084f0a9cf05b1877bd8a71a90dae7ff8">00133</a> <a class="code" href="main_8c.html#a7cfcbe42bd266750aeb6e5d71e5ea479" title="Timer2 interrupt ~60Hz.">ISR</a>(USART0_RX_vect) {
 <a name="l00134"></a>00134   uint8_t c = UDR0;
 <a name="l00135"></a>00135   <span class="keywordflow">if</span> (!uart0_rxfull()) {
-<a name="l00136"></a>00136     <a class="code" href="uart0_8c.html#aeeed7d61fec0893066ee59e2958b18d9">uart0_rx_putchar</a>(c);
+<a name="l00136"></a>00136     uart0_rx_putchar(c);
 <a name="l00137"></a>00137   }
-<a name="l00138"></a>00138   <a class="code" href="niboCom_8c.html#af98ea146a076d51931cc31b7f1434d09">niboCom_uartInterrupt</a>();
+<a name="l00138"></a>00138   <a class="code" href="niboCom_8c.html#af98ea146a076d51931cc31b7f1434d09" title="is called on the USART0_RX_vect interrupt, receives char send via xbee and tries...">niboCom_uartInterrupt</a>();
 <a name="l00139"></a>00139 }
 <a name="l00140"></a>00140 
 <a name="l00141"></a>00141 
-<a name="l00142"></a><a class="code" href="uart0_8c.html#a95e67e677722a53e3ad9f1ffce2e7408">00142</a> <a class="code" href="main_8c.html#a7cfcbe42bd266750aeb6e5d71e5ea479" title="Timer2 interrupt.">ISR</a>(USART0_UDRE_vect) {
+<a name="l00142"></a><a class="code" href="uart0_8c.html#a95e67e677722a53e3ad9f1ffce2e7408">00142</a> <a class="code" href="main_8c.html#a7cfcbe42bd266750aeb6e5d71e5ea479" title="Timer2 interrupt ~60Hz.">ISR</a>(USART0_UDRE_vect) {
 <a name="l00143"></a>00143   <span class="keywordflow">if</span> (!uart0_txempty()) {
-<a name="l00144"></a>00144     UDR0 = <a class="code" href="uart0_8c.html#ad6756e5c40a4a4dc8bab9fff33a708ae">uart0_tx_getchar</a>();
+<a name="l00144"></a>00144     UDR0 = uart0_tx_getchar();
 <a name="l00145"></a>00145   } <span class="keywordflow">else</span> {
 <a name="l00146"></a>00146     UCSR0B &amp;= ~_BV(UDRIE0);
 <a name="l00147"></a>00147   }
@@ -177,7 +177,7 @@
 <a name="l00154"></a>00154 <span class="preprocessor"></span>
 <a name="l00155"></a>00155 
 </pre></div></div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:40 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>

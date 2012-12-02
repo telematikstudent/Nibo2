@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>Nummer2lebt!: src/main.c File Reference</title>
+<title>Nummer2lebt(Martini)!: src/main.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -11,7 +11,7 @@
 <div class="navigation" id="top">
   <div class="tabs">
     <ul>
-      <li><a href="index.html"><span>Main&nbsp;Page</span></a></li>
+      <li><a href="main.html"><span>Main&nbsp;Page</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
     </ul>
   </div>
@@ -23,34 +23,51 @@
   </div>
 </div>
 <div class="contents">
-<h1>src/main.c File Reference</h1><code>#include &quot;<a class="el" href="main_8c_source.html">main.h</a>&quot;</code><br/>
+<h1>src/main.c File Reference</h1>
+<p>Main program for nibo, including the main loop.  
+<a href="#_details">More...</a></p>
+<code>#include &quot;<a class="el" href="main_8c_source.html">main.h</a>&quot;</code><br/>
+<code>#include &lt;stdbool.h&gt;</code><br/>
 <code>#include &lt;nibo/niboconfig.h&gt;</code><br/>
 <code>#include &lt;nibo/iodefs.h&gt;</code><br/>
 <code>#include &lt;nibo/bot.h&gt;</code><br/>
 <code>#include &lt;nibo/delay.h&gt;</code><br/>
+<code>#include &lt;nibo/leds.h&gt;</code><br/>
+<code>#include &lt;nibo/sound.h&gt;</code><br/>
 <code>#include &lt;avr/interrupt.h&gt;</code><br/>
-<code>#include &lt;stdbool.h&gt;</code><br/>
 <code>#include &quot;<a class="el" href="niboCom_8h_source.html">xbee/niboCom.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="drive_8h_source.html">drive/drive.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="advDisplay_8h_source.html">display/advDisplay.h</a>&quot;</code><br/>
-<code>#include &quot;nibo/i2cmaster.h&quot;</code><br/>
 <code>#include &lt;nibo/copro.h&gt;</code><br/>
 <code>#include &lt;nibo/spi.h&gt;</code><br/>
 <code>#include &lt;nibo/nds3.h&gt;</code><br/>
-<code>#include &lt;nibo/sound.h&gt;</code><br/>
+<code>#include &lt;nibo/i2cmaster.h&gt;</code><br/>
 
 <p><a href="main_8c_source.html">Go to the source code of this file.</a></p>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a7cfcbe42bd266750aeb6e5d71e5ea479">ISR</a> (TIMER2_OVF_vect)</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Timer2 interrupt.  <a href="#a7cfcbe42bd266750aeb6e5d71e5ea479"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Timer2 interrupt ~60Hz.  <a href="#a7cfcbe42bd266750aeb6e5d71e5ea479"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a87db9dcc05749f528302dd9ed81ebb62">initBot</a> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">initializes the nibo  <a href="#a87db9dcc05749f528302dd9ed81ebb62"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">the main function contains the main-loop  <a href="#ae66f6b31b5ad750f1fe042a706a4e3d4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6203cf7730a43127dc43ea7afbd43e4d">autoMode</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">moves the nibo around automagically  <a href="#a6203cf7730a43127dc43ea7afbd43e4d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#aa4018b7c00365f5bab82afe573e2406b">checkDistance</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">checks the values of the IR-sensors and switches the leds depending on the value.  <a href="#aa4018b7c00365f5bab82afe573e2406b"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a0d1e5aed75718f55587106eafc6476eb">voltageCheck</a> = 0</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a37e90f5e3bd99fac2021fb3a326607d4">mode</a> = MODE_MAN</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#af14ada10cf4cb3812b8a8528e3a4ab80">nds_scan</a></td></tr>
 </table>
+<hr/><a name="_details"></a><h2>Detailed Description</h2>
+<p>Main program for nibo, including the main loop. </p>
+<p>Headerfile: Main program for nibo, including the main loop.</p>
+<dl class="author"><dt><b>Author:</b></dt><dd>Phillip Kopprasch, Marcus Tenbusch, Christian Witte </dd></dl>
+<dl class="date"><dt><b>Date:</b></dt><dd>Version 0.1 </dd></dl>
+
+<p>Definition in file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a6203cf7730a43127dc43ea7afbd43e4d"></a><!-- doxytag: member="main.c::autoMode" ref="a6203cf7730a43127dc43ea7afbd43e4d" args="()" -->
 <div class="memitem">
@@ -67,18 +84,13 @@
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main_8c_source.html#l00183">183</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p>moves the nibo around automagically </p>
 
-<p>References <a class="el" href="drive_8c_source.html#l00014">drive()</a>, <a class="el" href="drive_8h_source.html#l00035">drive_all_blocked</a>, <a class="el" href="drive_8c_source.html#l00064">drive_getFreePath()</a>, <a class="el" href="drive_8c_source.html#l00100">drive_isLeftFree()</a>, <a class="el" href="drive_8c_source.html#l00093">drive_isRightFree()</a>, <a class="el" href="drive_8h_source.html#l00033">drive_left_free</a>, <a class="el" href="drive_8h_source.html#l00031">drive_right_free</a>, <a class="el" href="drive_8c_source.html#l00038">drive_turn_halfLeft()</a>, and <a class="el" href="drive_8c_source.html#l00050">drive_turn_halfRight()</a>.</p>
+<p>Definition at line <a class="el" href="main_8c_source.html#l00219">219</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="advDisplay_8c_source.html#l00098">advDisplay_append_line()</a>, <a class="el" href="advDisplay_8c_source.html#l00037">advDisplay_printVoltage()</a>, <a class="el" href="drive_8c_source.html#l00015">drive()</a>, <a class="el" href="drive_8h_source.html#l00044">drive_all_blocked</a>, <a class="el" href="drive_8c_source.html#l00039">drive_getFreePath()</a>, <a class="el" href="drive_8c_source.html#l00130">drive_isLeftFree()</a>, <a class="el" href="drive_8c_source.html#l00119">drive_isRightFree()</a>, <a class="el" href="drive_8h_source.html#l00042">drive_left_free</a>, <a class="el" href="drive_8h_source.html#l00040">drive_right_free</a>, <a class="el" href="drive_8c_source.html#l00069">drive_turn_halfLeft()</a>, <a class="el" href="drive_8c_source.html#l00087">drive_turn_halfRight()</a>, <a class="el" href="main_8c_source.html#l00014">mode</a>, <a class="el" href="main_8h_source.html#l00050">MODE_MAN</a>, <a class="el" href="main_8c_source.html#l00018">nds_scan</a>, <a class="el" href="main_8h_source.html#l00054">NDS_SCAN_DEG</a>, <a class="el" href="ndsScan_8c_source.html#l00016">ndsScan()</a>, <a class="el" href="niboCom_8h_source.html#l00036">niboCom_cmd_nds_distance</a>, <a class="el" href="niboCom_8h_source.html#l00033">niboCom_cmd_nibo_man</a>, <a class="el" href="niboCom_8h_source.html#l00029">niboCom_cmd_none</a>, <a class="el" href="niboCom_8c_source.html#l00123">niboCom_getCMD()</a>, and <a class="el" href="niboCom_8c_source.html#l00098">niboCom_putNDSDistance()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="main_8c_a6203cf7730a43127dc43ea7afbd43e4d_cgraph.png" border="0" usemap="#main_8c_a6203cf7730a43127dc43ea7afbd43e4d_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -97,11 +109,13 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main_8c_source.html#l00216">216</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p>checks the values of the IR-sensors and switches the leds depending on the value. </p>
 
-<p>References <a class="el" href="drive_8h_source.html#l00038">irAbstand</a>.</p>
+<p>Definition at line <a class="el" href="main_8c_source.html#l00288">288</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00018">ISR()</a>.</p>
+<p>References <a class="el" href="drive_8h_source.html#l00047">IRDistance</a>.</p>
+
+<p>Referenced by <a class="el" href="main_8c_source.html#l00023">ISR()</a>.</p>
 
 </div>
 </div>
@@ -120,18 +134,13 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main_8c_source.html#l00037">37</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p>initializes the nibo </p>
 
-<p>References <a class="el" href="advDisplay_8c_source.html#l00103">advDisplay_append_line()</a>, <a class="el" href="advDisplay_8c_source.html#l00076">advDisplay_clear()</a>, <a class="el" href="advDisplay_8c_source.html#l00062">advDisplay_init()</a>, <a class="el" href="ndsScan_8c_source.html#l00042">ndsScan_init()</a>, and <a class="el" href="niboCom_8c_source.html#l00031">niboCom_init()</a>.</p>
+<p>Definition at line <a class="el" href="main_8c_source.html#l00045">45</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00087">main()</a>.</p>
+<p>References <a class="el" href="advDisplay_8c_source.html#l00098">advDisplay_append_line()</a>, <a class="el" href="advDisplay_8c_source.html#l00071">advDisplay_clear()</a>, <a class="el" href="advDisplay_8c_source.html#l00058">advDisplay_init()</a>, <a class="el" href="advDisplay_8c_source.html#l00037">advDisplay_printVoltage()</a>, <a class="el" href="ndsScan_8c_source.html#l00044">ndsScan_init()</a>, and <a class="el" href="niboCom_8c_source.html#l00033">niboCom_init()</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="main_8c_a87db9dcc05749f528302dd9ed81ebb62_cgraph.png" border="0" usemap="#main_8c_a87db9dcc05749f528302dd9ed81ebb62_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
 
 </div>
 </div>
@@ -151,29 +160,21 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Timer2 interrupt. </p>
+<p>Timer2 interrupt ~60Hz. </p>
 
-<p>Definition at line <a class="el" href="main_8c_source.html#l00018">18</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p>Definition at line <a class="el" href="main_8c_source.html#l00023">23</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p>References <a class="el" href="main_8c_source.html#l00216">checkDistance()</a>, <a class="el" href="n2sound_8c_source.html#l00024">tone()</a>, and <a class="el" href="main_8c_source.html#l00012">voltageCheck</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="main_8c_a7cfcbe42bd266750aeb6e5d71e5ea479_cgraph.png" border="0" usemap="#main_8c_a7cfcbe42bd266750aeb6e5d71e5ea479_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>References <a class="el" href="main_8c_source.html#l00288">checkDistance()</a>, <a class="el" href="n2sound_8c_source.html#l00024">tone()</a>, and <a class="el" href="main_8c_source.html#l00011">voltageCheck</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a840291bc02cba5474a4cb46a9b9566fe"></a><!-- doxytag: member="main.c::main" ref="a840291bc02cba5474a4cb46a9b9566fe" args="(void)" -->
+<a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a><!-- doxytag: member="main.c::main" ref="ae66f6b31b5ad750f1fe042a706a4e3d4" args="()" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int main </td>
           <td>(</td>
-          <td class="paramtype">void&nbsp;</td>
           <td class="paramname"></td>
           <td>&nbsp;)&nbsp;</td>
           <td></td>
@@ -182,20 +183,49 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main_8c_source.html#l00087">87</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p>the main function contains the main-loop </p>
 
-<p>References <a class="el" href="advDisplay_8c_source.html#l00103">advDisplay_append_line()</a>, <a class="el" href="advDisplay_8c_source.html#l00040">advDisplay_printVoltage()</a>, <a class="el" href="main_8c_source.html#l00183">autoMode()</a>, <a class="el" href="drive_8c_source.html#l00014">drive()</a>, <a class="el" href="drive_8h_source.html#l00029">drive_front_free</a>, <a class="el" href="drive_8c_source.html#l00056">drive_turn_around()</a>, <a class="el" href="drive_8c_source.html#l00038">drive_turn_halfLeft()</a>, <a class="el" href="drive_8c_source.html#l00050">drive_turn_halfRight()</a>, <a class="el" href="drive_8c_source.html#l00032">drive_turn_left()</a>, <a class="el" href="drive_8c_source.html#l00044">drive_turn_right()</a>, <a class="el" href="main_8c_source.html#l00037">initBot()</a>, <a class="el" href="main_8h_source.html#l00026">MODE_AUTO</a>, <a class="el" href="main_8h_source.html#l00028">MODE_MAN</a>, <a class="el" href="main_8h_source.html#l00030">NDS_SCAN_DEG</a>, <a class="el" href="ndsScan_8c_source.html#l00017">ndsScan()</a>, <a class="el" href="niboCom_8h_source.html#l00038">niboCom_cmd_nds_distance</a>, <a class="el" href="niboCom_8h_source.html#l00034">niboCom_cmd_nibo_auto</a>, <a class="el" href="niboCom_8h_source.html#l00040">niboCom_cmd_nibo_drive</a>, <a class="el" href="niboCom_8h_source.html#l00044">niboCom_cmd_nibo_halfLeft</a>, <a class="el" href="niboCom_8h_source.html#l00046">niboCom_cmd_nibo_halfRight</a>, <a class="el" href="niboCom_8h_source.html#l00045">niboCom_cmd_nibo_left</a>, <a class="el" href="niboCom_8h_source.html#l00035">niboCom_cmd_nibo_man</a>, <a class="el" href="niboCom_8h_source.html#l00047">niboCom_cmd_nibo_right</a>, <a class="el" href="niboCom_8h_source.html#l00041">niboCom_cmd_nibo_stop</a>, <a class="el" href="niboCom_8h_source.html#l00043">niboCom_cmd_nibo_turn</a>, <a class="el" href="niboCom_8h_source.html#l00031">niboCom_cmd_none</a>, <a class="el" href="niboCom_8c_source.html#l00090">niboCom_getCMD()</a>, and <a class="el" href="niboCom_8c_source.html#l00075">niboCom_putNDSDistance()</a>.</p>
+<p>Definition at line <a class="el" href="main_8c_source.html#l00102">102</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dynsection">
-<div class="center"><img src="main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph_map" alt=""></div>
-</div>
-</p>
+<p>References <a class="el" href="advDisplay_8c_source.html#l00098">advDisplay_append_line()</a>, <a class="el" href="advDisplay_8c_source.html#l00037">advDisplay_printVoltage()</a>, <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, <a class="el" href="drive_8c_source.html#l00015">drive()</a>, <a class="el" href="drive_8h_source.html#l00038">drive_front_free</a>, <a class="el" href="drive_8c_source.html#l00096">drive_turn_around()</a>, <a class="el" href="drive_8c_source.html#l00069">drive_turn_halfLeft()</a>, <a class="el" href="drive_8c_source.html#l00087">drive_turn_halfRight()</a>, <a class="el" href="drive_8c_source.html#l00060">drive_turn_left()</a>, <a class="el" href="drive_8c_source.html#l00078">drive_turn_right()</a>, <a class="el" href="main_8c_source.html#l00045">initBot()</a>, <a class="el" href="main_8c_source.html#l00014">mode</a>, <a class="el" href="main_8h_source.html#l00052">MODE_AUTO</a>, <a class="el" href="main_8h_source.html#l00050">MODE_MAN</a>, <a class="el" href="main_8c_source.html#l00018">nds_scan</a>, <a class="el" href="main_8h_source.html#l00054">NDS_SCAN_DEG</a>, <a class="el" href="ndsScan_8c_source.html#l00016">ndsScan()</a>, <a class="el" href="niboCom_8h_source.html#l00036">niboCom_cmd_nds_distance</a>, <a class="el" href="niboCom_8h_source.html#l00032">niboCom_cmd_nibo_auto</a>, <a class="el" href="niboCom_8h_source.html#l00038">niboCom_cmd_nibo_drive</a>, <a class="el" href="niboCom_8h_source.html#l00042">niboCom_cmd_nibo_halfLeft</a>, <a class="el" href="niboCom_8h_source.html#l00044">niboCom_cmd_nibo_halfRight</a>, <a class="el" href="niboCom_8h_source.html#l00043">niboCom_cmd_nibo_left</a>, <a class="el" href="niboCom_8h_source.html#l00033">niboCom_cmd_nibo_man</a>, <a class="el" href="niboCom_8h_source.html#l00045">niboCom_cmd_nibo_right</a>, <a class="el" href="niboCom_8h_source.html#l00039">niboCom_cmd_nibo_stop</a>, <a class="el" href="niboCom_8h_source.html#l00041">niboCom_cmd_nibo_turn</a>, <a class="el" href="niboCom_8h_source.html#l00029">niboCom_cmd_none</a>, <a class="el" href="niboCom_8c_source.html#l00123">niboCom_getCMD()</a>, and <a class="el" href="niboCom_8c_source.html#l00098">niboCom_putNDSDistance()</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="a37e90f5e3bd99fac2021fb3a326607d4"></a><!-- doxytag: member="main.c::mode" ref="a37e90f5e3bd99fac2021fb3a326607d4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t <a class="el" href="main_8c.html#a37e90f5e3bd99fac2021fb3a326607d4">mode</a> = MODE_MAN</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="main_8c_source.html#l00014">14</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af14ada10cf4cb3812b8a8528e3a4ab80"></a><!-- doxytag: member="main.c::nds_scan" ref="af14ada10cf4cb3812b8a8528e3a4ab80" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* <a class="el" href="main_8c.html#af14ada10cf4cb3812b8a8528e3a4ab80">nds_scan</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition at line <a class="el" href="main_8c_source.html#l00018">18</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+
+<p>Referenced by <a class="el" href="main_8c_source.html#l00219">autoMode()</a>, and <a class="el" href="main_8c_source.html#l00102">main()</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a0d1e5aed75718f55587106eafc6476eb"></a><!-- doxytag: member="main.c::voltageCheck" ref="a0d1e5aed75718f55587106eafc6476eb" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -207,14 +237,14 @@ Here is the call graph for this function:</div>
 </div>
 <div class="memdoc">
 
-<p>Definition at line <a class="el" href="main_8c_source.html#l00012">12</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
+<p>Definition at line <a class="el" href="main_8c_source.html#l00011">11</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p>Referenced by <a class="el" href="main_8c_source.html#l00018">ISR()</a>.</p>
+<p>Referenced by <a class="el" href="main_8c_source.html#l00023">ISR()</a>.</p>
 
 </div>
 </div>
 </div>
-<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 19:24:41 2012 for Nummer2lebt! by&nbsp;
+<hr class="footer"/><address style="text-align: right;"><small>Generated on Sun Dec 2 22:13:19 2012 for Nummer2lebt(Martini)! by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.3 </small></address>
 </body>
