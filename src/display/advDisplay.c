@@ -89,6 +89,9 @@ void advDisplay_clear(){
 		strcpy(terminal_text[i],"                    ");
 	}
 
+	terminal_head = 0;
+	terminal_count = 0;
+
 	//enable interrupts
 	sei();
 }

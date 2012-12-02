@@ -10,37 +10,7 @@
 #include "main.h"
 
 int voltageCheck = 0;
-void autoMode()
-{
-    uint8_t driveStatus = drive_status_all_blocked;
-    drive(20);
-    driveStatus = checkDriveDirection();
-    char output[20] = "";
-    sprintf(output, "drive: : %i", driveStatus);
-    advDisplay_append_line(output);
-    if(driveStatus == drive_status_right_free){
-				turn_halfRight();
-			}
-			else if(driveStatus == drive_status_left_free){
-				turn_halfLeft();
-			}
-			else if(driveStatus == drive_status_all_blocked){
-				while(1){
-					copro_setTargetRel(-10, -10, 10);
-					delay(1000);
-					driveStatus = checkDriveDirection();
 
-					if(driveStatus == drive_status_right_free){
-						turn_halfRight();
-						break;
-					}
-					else if(driveStatus == drive_status_left_free){
-						turn_halfLeft();
-						break;
-					}
-				}
-			}
-}
 
 /**
  * @brief Timer2 interrupt
@@ -68,42 +38,53 @@ void initBot() {
 
 	bot_init();
 	sei();
+	advDisplay_init();
+	advDisplay_append_line("Martini!");
+	advDisplay_append_line("Init:");
+	delay(1000);
+
 	spi_init();
+	advDisplay_append_line("Motor      OK");
+	delay(500);
 
 	niboCom_init();
-	advDisplay_init();
+	advDisplay_append_line("XBEE       OK");
+	delay(500);
+
 	sound_init();
+	advDisplay_append_line("Audio      OK");
+	delay(500);
 
-	//Distanzmessung einschalten
 	copro_ir_startMeasure();
+	advDisplay_append_line("Sensoren   OK");
+	delay(500);
 
-	// initialize i2c for communication with nds3
-	i2c_init();
+	ndsScan_init();
+	advDisplay_append_line("NDS        OK");
+	delay(500);
+
 	leds_init();
+	advDisplay_append_line("LEDS       OK");
+	delay(500);
 
 	//Timer-interrupt init
 	// set Prescaler 1024
 	TCCR2 = ((1<<CS22)|(0<<CS21)|(1<<CS20));
 	//enable Timer-Overflow-Interrupt
 	TIMSK |= (1<<TOIE2);
+	advDisplay_append_line("Interrupts OK");
 
 
-	niboStartScout(90);
 
-	//	advDisplay_append_line("Martini!");
-	//	advDisplay_append_line("Wartet auf ");
-	//	advDisplay_append_line("Eingabe...");
+
+	advDisplay_append_line("Bereit!");
+	delay(1000);
+	advDisplay_clear();
+
 
 }
 
 int main(void) {
-
-	//Laufzeitvariablen
-//	uint8_t status = defaultstatus;
-//	uint8_t statusMerker = 0;
-
-//	uint8_t cnt = 0;
-//	// true = manueller mode || false = automatischer modus
 
 	uint8_t mode = MODE_MAN;
 	uint8_t cmd = niboCom_cmd_none;
@@ -111,8 +92,6 @@ int main(void) {
 	uint8_t *nds_scan;
 
 	initBot();
-	copro_stop();
-
 
 
 	while (1) {
@@ -140,62 +119,117 @@ int main(void) {
 				mode = MODE_MAN;
 				advDisplay_append_line("-> Manuell");
 				delay(500);
+				break;
 			}
 			else if((PIND & (1 << PD4)) == 0){
 				mode = MODE_MAN;
 				advDisplay_append_line("-> Manuell");
 				delay(500);
+				break;
 			}
 
 			if(cmd == niboCom_cmd_nds_distance){
-				nds_scan = checkObjektsOnDistance(NDS_SCAN_DEG);
+				nds_scan = ndsScan(NDS_SCAN_DEG);
 				niboCom_putNDSDistance((180/NDS_SCAN_DEG)+1,nds_scan);
 			}
-				autoMode();
+			autoMode();
 
 		}//end auto mode
+		copro_stop();
 
 		//command execution manual mode
 
 		if(cmd == niboCom_cmd_nds_distance){
-			nds_scan = checkObjektsOnDistance(NDS_SCAN_DEG);
+			nds_scan = ndsScan(NDS_SCAN_DEG);
 			niboCom_putNDSDistance((180/NDS_SCAN_DEG)+1,nds_scan);
 		}
 		else if(cmd == niboCom_cmd_nibo_drive){
-			uint8_t driveStatus = drive_status_front_free;
-			while(driveStatus == drive_status_front_free){
+			uint8_t driveStatus = drive_front_free;
+			while(driveStatus == drive_front_free){
 				cmd = niboCom_getCMD();
 				if(cmd != niboCom_cmd_nibo_stop){
 					driveStatus = drive(20);
-				}
-				if(cmd == niboCom_cmd_nds_distance){
-					nds_scan = checkObjektsOnDistance(NDS_SCAN_DEG);
-					niboCom_putNDSDistance((180/NDS_SCAN_DEG)+1,nds_scan);
 				}
 				else{
 					copro_stop();
 					break;
 				}
+				if(cmd == niboCom_cmd_nds_distance){
+					nds_scan = ndsScan(NDS_SCAN_DEG);
+					niboCom_putNDSDistance((180/NDS_SCAN_DEG)+1,nds_scan);
+				}
 			}
 
 		}
 		else if(cmd == niboCom_cmd_nibo_left){
-			turn_left();
+			drive_turn_left();
 		}
 		else if(cmd == niboCom_cmd_nibo_halfLeft){
-			turn_halfLeft();
+			drive_turn_halfLeft();
 		}
 		else if(cmd == niboCom_cmd_nibo_halfRight){
-			turn_halfRight();
+			drive_turn_halfRight();
 		}
 		else if(cmd == niboCom_cmd_nibo_right){
-			turn_right();
+			drive_turn_right();
 		}
 		else if(cmd == niboCom_cmd_nibo_turn){
-			turn_around();
+			drive_turn_around();
 		}
 
 	}
+}
+
+void autoMode()
+{
+    uint8_t driveStatus = drive_all_blocked;
+    drive(20);
+    driveStatus = drive_getFreePath();
+
+    if(driveStatus == drive_right_free){
+		drive_turn_halfRight();
+	}
+	else if(driveStatus == drive_left_free){
+		drive_turn_halfLeft();
+	}
+	else if(driveStatus == drive_all_blocked){
+		while(1){
+			copro_setTargetRel(-10, -10, 10);
+			delay(1500);
+			driveStatus = drive_getFreePath();
+
+			if(drive_isRightFree()){
+				copro_stop();
+				drive_turn_halfRight();
+				break;
+			}
+			else if(drive_isLeftFree()){
+				copro_stop();
+				drive_turn_halfLeft();
+				break;
+			}
+		}
+	}
+}
+
+
+void checkDistance(){
+	copro_update();
+	if((copro_distance[0]/256) > irAbstand){leds_set_status(LEDS_RED,7);}
+	else{leds_set_status(LEDS_GREEN,7);}
+
+	if((copro_distance[1]/256) > irAbstand){leds_set_status(LEDS_RED,6);}
+	else{leds_set_status(LEDS_GREEN,6);}
+
+	if((copro_distance[2]/256) > irAbstand){leds_set_status(LEDS_RED,5);leds_set_status(LEDS_RED,4);}
+	else{leds_set_status(LEDS_GREEN,5);leds_set_status(LEDS_GREEN,4);}
+
+	if((copro_distance[3]/256) > irAbstand){leds_set_status(LEDS_RED,3);}
+	else{leds_set_status(LEDS_GREEN,3);}
+
+	if((copro_distance[4]/256) > irAbstand){leds_set_status(LEDS_RED,2);}
+	else{leds_set_status(LEDS_GREEN,2);}
+
 }
 
 

@@ -1,11 +1,14 @@
 /**
  ============================================================================
- @file       : niboCom.c
- @author     : Phillip Kopprasch
- @date	     : Version 1.0
- @brief		 : library for nibo2pc communication
+
+ @file        niboCom.c
+ @author      Phillip Kopprasch
+ @date	      Version 1.0
+ @brief		  library for nibo2pc communication.
+
  ============================================================================
  */
+
 
 /**
  * includes
@@ -26,14 +29,9 @@ uint8_t lastCMD = niboCom_cmd_none;
 uint8_t buffer[niboCom_bufferSize];
 uint8_t bufferPos = 0;
 
-
-
-
-
 void niboCom_init(){
 	niboCom_init_with_baud(niboCom_default_baudrate);
 }
-
 
 void niboCom_init_with_baud(uint16_t baudrate){
 		uart0_set_baudrate(baudrate);

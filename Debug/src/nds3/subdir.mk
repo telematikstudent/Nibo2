@@ -4,13 +4,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/nds3/scout.c 
+../src/nds3/ndsScan.c 
 
 OBJS += \
-./src/nds3/scout.o 
+./src/nds3/ndsScan.o 
 
 C_DEPS += \
-./src/nds3/scout.d 
+./src/nds3/ndsScan.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
