@@ -86,7 +86,7 @@ void advDisplay_clear(){
 	}
 
 	for(i = 0; i < terminal_lines; i++){
-		strcpy(terminal_text[i],"");
+		strcpy(terminal_text[i],"                    ");
 	}
 
 	//enable interrupts
@@ -97,14 +97,13 @@ void advDisplay_clear(){
  *	@brief appends a line to the advDisplay terminal -> display can show the last #terminal_lines lines
  *	@param string to append
  */
-void advDisplay_append_line(const char *txt){
+void advDisplay_append_line(char *txt){
 
 	//calculate index for the new line in terminal_text
 	int index = (terminal_head + terminal_count)%terminal_lines;
 
 	//copy the line into terminal_text array at calculated index
 	strcpy(terminal_text[index], txt);
-
 
 	if(terminal_count < 5){
 		terminal_count++;
@@ -125,13 +124,21 @@ void advDisplay_printTerminal(){
 	int index;
 
 	for(i = 0; i < terminal_count;i++){
+
+		//clear line
 		gfx_move(logo_width,10 + 10*i);
+		gfx_print_text("                      ");
+
+		//print line
 		index = (terminal_head + i)%terminal_lines;
+		gfx_move(logo_width,10 + 10*i);
 		gfx_print_text(terminal_text[index]);
 		delay(10);
 	}
 
 }
+
+
 
 
 

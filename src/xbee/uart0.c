@@ -30,14 +30,14 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 */
 
-#include "nibo/niboconfig.h"
+#include <nibo/niboconfig.h>
 #ifndef NIBO_USE_UART0
 #error NIBO_USE_UART0 must be defined in niboconfig.h when this file is compiled
 #endif
 
 #include <avr/interrupt.h>
 
-#include "nibo/uart0.h"
+#include "uart0.h"
 #include "niboCom.h"
 
 #ifdef __cplusplus

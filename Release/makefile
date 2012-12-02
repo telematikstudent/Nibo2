@@ -9,7 +9,12 @@ RM := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include subdir.mk
+-include src/xbee/subdir.mk
+-include src/nds3/subdir.mk
 -include src/subdir.mk
+-include src/display/debug/subdir.mk
+-include src/display/subdir.mk
+-include src/antrieb/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)

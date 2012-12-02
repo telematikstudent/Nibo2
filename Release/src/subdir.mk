@@ -4,13 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/Application.c 
+../src/main.c \
+../src/n2sound.c 
 
 OBJS += \
-./src/Application.o 
+./src/main.o \
+./src/n2sound.o 
 
 C_DEPS += \
-./src/Application.d 
+./src/main.d \
+./src/n2sound.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

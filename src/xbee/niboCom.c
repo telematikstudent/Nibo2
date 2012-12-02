@@ -13,11 +13,11 @@
 
 #include "niboCom.h"
 
+
 #define niboCom_bufferSize 10
 
 
 //status vars
-bool autoMode = false;
 bool startSign = false;
 
 uint8_t lastCMD = niboCom_cmd_none;
@@ -92,25 +92,22 @@ void niboCom_putDistance(uint8_t ticks){
 
 uint8_t niboCom_getCMD(){
 
-	if(autoMode == true) return niboCom_cmd_nibo_auto;
-
 	uint8_t tmp = lastCMD;
 	if(tmp != niboCom_cmd_none){
 		lastCMD = niboCom_cmd_none;
-		return tmp;
 	}
 
-	return niboCom_cmd_nibo_man;
-}
-
-void niboCom_setAuto(bool mode){
-	autoMode = mode;
+	return tmp;
 }
 
 
 void niboCom_uartInterrupt(){
 	while(uart0_rxempty() == true);
 	uint8_t c = niboCom_getchar();
+
+//	char output[21] = "";
+//	sprintf(output, "sign: %1i", c);
+//	advDisplay_append_line(output);
 
 	if(c == 0x68){
 		startSign = true;
@@ -125,17 +122,7 @@ void niboCom_uartInterrupt(){
 		bufferPos = 0;
 		startSign = false;
 		if(c == 0x16){
-
-			if(buffer[1] == niboCom_cmd_nibo_auto){
-				autoMode = true;
-			}
-			else if(buffer[1] == niboCom_cmd_nibo_man){
-				autoMode = false;
-			}
-			else{
-				lastCMD = buffer[1];
-			}
-
+			lastCMD = buffer[1];
 		}
 	}
 

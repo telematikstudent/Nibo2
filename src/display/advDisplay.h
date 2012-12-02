@@ -27,6 +27,8 @@
 #include <nibo/gfx.h>
 #include <nibo/bot.h>
 
+
+
 /**
  *includes avr
  */
@@ -38,6 +40,7 @@
  */
 #include "logo.xbm"
 #include <stdio.h>
+#include "string.h"
 
 
 /**
@@ -54,7 +57,7 @@ void advDisplay_clear();
  *	@brief appends a line to the advDisplay terminal -> display can show the last #terminal_lines lines
  *	@param string to append
  */
-void advDisplay_append_line(const char *txt);
+void advDisplay_append_line(char *txt);
 
 /**
  * @brief prints the current Voltage on the display
